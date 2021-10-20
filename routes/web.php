@@ -7,6 +7,7 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\LionsfieldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\AttendanceController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -67,6 +68,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/pages/attendance/attendance_edit/{id}', [AttendanceController::class, 'AttendanceTeacherReportEdit'])->name('admin.pages.attendance.attendance_edit');
     Route::post('admin/pages/attendance/attendance_update/{id}', [AttendanceController::class, 'AttendanceTeacherReportUpdate'])->name('admin.pages.attendance.attendance_update');
     Route::get('admin/pages/attendance/attendance_delete/{id}', [AttendanceController::class, 'AttendanceTeacherReportDelete'])->name('admin.pages.attendance.attendance_delete');
-    
 });
+
+// HomePage Lionsfield Routes Front End One
+    Route::get('frontend/index', [LionsfieldController::class, 'Home'])->name('home');
+    Route::get('frontend/pages/quienes_somos', [LionsfieldController::class, 'Quienes'])->name('quienes_somos');
+
+
+// HomePage Lionsfield Routes Front End Two
+    Route::get('frontend_inicio/index', [LionsfieldTwoController::class, 'Home'])->name('inicio');
 

@@ -1,0 +1,23 @@
+.progress-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.percent-label {
+   font-size: 20px;
+}
+
+.room-to-breathe {
+   margin-top: 20px;
+}
+
+.progress-title {
+   margin-top: 5px;
+   padding-top: 5px;
+   font-size: 16px;
+   text-transform: uppercase;
+   font-weight: 700;
+   font-family: Raleway, "Helvetica Neue", Helvetica, sans-serif;
+   color: #333;
+}
