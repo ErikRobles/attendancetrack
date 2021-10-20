@@ -59,11 +59,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function getStudentRelation() { 
+    public function student() { 
         return $this->hasMany(Student::class, 'teacher_id', 'id');
     }
 
-    public function getCompanyTeacherRelation() {
-        return $this->belongsTo(Company::class, 'company_teachers', 'teacher_id', 'company_id');
-    }
+    // public function getCompanyTeacherRelation() {
+    //     return $this->belongsTo(Company::class, 'company_teachers', 'teacher_id', 'company_id');
+    // }
 }

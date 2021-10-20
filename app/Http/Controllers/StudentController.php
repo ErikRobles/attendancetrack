@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function StudentView() {
-        $data['allData'] = Student::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation')->get();
+        $data['allData'] = Student::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation')->orderBy('company_id', 'DESC')->get();
         return view('admin.pages.students.students_view', $data);
     }
 

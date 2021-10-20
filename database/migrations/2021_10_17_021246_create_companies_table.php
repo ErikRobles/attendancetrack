@@ -18,10 +18,10 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             $table->integer('student_id')->nullable();
             $table->integer('teacher_id')->nullable();
-            $table->string('contact1')->default('No name provided')->nullable;
-            $table->string('contact2')->default('No name provided')->nullable;
-            $table->string('phone1')->default('No number provided')->nullable;
-            $table->string('phone2')->default('No number provided')->nullable;
+            $table->string('contact1')->default('No name provided')->nullable();
+            $table->string('contact2')->default('No name provided')->nullable();
+            $table->string('phone1')->default('No number provided')->nullable();
+            $table->string('phone2')->default('No number provided')->nullable();
             $table->timestamps();
         });
     }

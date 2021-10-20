@@ -15,12 +15,12 @@ class AttendanceController extends Controller
 {
 
     public function AttendanceReportView() {
-        $data['allData'] = Attendance::with('student.company')->orderBy('attendances.month', 'DESC')->get();
+        $data['allData'] = Attendance::with('student.company')->orderBy('attendances.date', 'DESC')->get();
+        $data['teachers'] = Attendance::with('attendance')->get();
         return view('admin.pages.attendance.report_view', $data);
     }
 
-
-    public function AttendanceTeacherReportAdd(){
+    public function AttendanceTeacherReportAdd() {
         $data['allData'] = Student::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation')->get();
         $data['students'] = Student::where('teacher_id', Auth::user()->id)->get();
         $data['levels'] = Level::all();
@@ -30,20 +30,31 @@ class AttendanceController extends Controller
 
     public function AttendanceTeacherReportStore(Request $request) {
         $countstudent = count($request->student_id);
-       for($i=0; $i < $countstudent; $i++) { 
-
-           $attend_status = 'attend_status'.$i;
-           $attend = new Attendance();
-           $attend->student_id = $request->student_id[$i];
-           $attend->attend_status = $request->$attend_status;
-           $attend->month = $request->month;
-           $attend->day = $request->day;
-           $attend->save();
-       }
+        if($countstudent !=NULL) {
+            for($i=0; $i < $countstudent; $i++) { 
+                $attend = new Attendance();
+                $attend->teacher_id = Auth::user()->id;
+                $attend->date = $request->date;
+                $attend->student_id = $request->student_id[$i];
+                $attend->attend_status = $request->attend_status[$i];
+                // $attend->company_id = $request->company_id;
+                $attend->save();
+            }
+        } 
         $notification = array(
-            'message' => 'Students Attendance Successfully Added',
+            'message' => 'Students Attendance Successfully Submitted. Feel free to add another.',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
+    }
+
+    public function AttendanceTeacherReportDelete($id) {
+        $attendance = Attendance::find($id);
+        $attendance->delete();
+        $notification = array(
+           'message' => 'Attendance Successfully Deleted',
+           'alert-type' => 'success'
+       );
+       return Redirect()->route('admin.pages.attendance.report_view')->with($notification);
     }
 }

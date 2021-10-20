@@ -26,10 +26,10 @@
           <table class="table table-hover text-nowrap">
             <thead>
               <tr>
-                <th>Month</th>
-                <th>Day</th>
+                <th>Date</th>             
                 <th>Company</th>
                 <th>Student</th>
+                <th>Assigned Teacher</th>
                 <th>Attend Status</th>
                 <th>Action</th>
               </tr>
@@ -37,17 +37,17 @@
             <tbody>
                 @foreach($allData as $attendance)
               <tr>
-                <td>{{ $attendance->month }}</td>
-                <td>{{ $attendance->day }}</td>
+                <td>{{ date('m-d-Y', strtotime($attendance->date)) }}</td>
                 <td>
                     {{ $attendance->student->company->name }}
                 </td>
+                <td>{{ $attendance->attendance->name }}</td>
                 <td>{{ $attendance->student->name }}</td>
                 <td>{{ $attendance->attend_status }}</td>
                 <td>
                     <a href="" class="btn btn-primary">Edit</a>
                     <a href="" class="btn btn-info">Details</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('admin.pages.attendance.attendance_delete', $attendance->id) }}" class="btn btn-danger">Delete</a>
                 </td>
               </tr>
               @endforeach

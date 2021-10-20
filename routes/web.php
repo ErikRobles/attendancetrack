@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function() {
     // Attendance Teacher Reporting Routes
     Route::get('admin/pages/attendance/attendance_add', [AttendanceController::class, 'AttendanceTeacherReportAdd'])->name('admin.pages.attendance.attendance_add');
     Route::post('admin/pages/attendance/attendance_store', [AttendanceController::class, 'AttendanceTeacherReportStore'])->name('admin.pages.attendance.attendance_store');
+    Route::get('admin/pages/attendance/attendance_delete/{id}', [AttendanceController::class, 'AttendanceTeacherReportDelete'])->name('admin.pages.attendance.attendance_delete');
 
 });
 

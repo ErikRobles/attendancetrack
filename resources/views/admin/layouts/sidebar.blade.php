@@ -57,12 +57,12 @@
                   <p>Levels</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-chalkboard-teacher nav-icon"></i>
                   <p>Teachers</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="{{ route('admin.pages.students.view') }}" class="nav-link">
                   <i class="fas fa-school nav-icon"></i>
