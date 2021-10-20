@@ -41,7 +41,10 @@
 <script src="dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('backend/js/pages/dashboard.js') }}"></script>
+<!--toastr-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!--data tables-->  
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
   @if(Session::has('message'))
   let type = "{{ Session::get('alert-type', 'info') }}" 

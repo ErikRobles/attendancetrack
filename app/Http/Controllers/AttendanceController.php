@@ -21,7 +21,8 @@ class AttendanceController extends Controller
     }
 
     public function AttendanceTeacherReportAdd() {
-        $data['allData'] = Student::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation')->get();
+        // $data['allData'] = Student::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation')->get();
+        $data['allData'] = Student::with('user')->get();
         $data['students'] = Student::where('teacher_id', Auth::user()->id)->get();
         $data['levels'] = Level::all();
         $data['companies'] = Company::with('studentRelation')->get();
@@ -46,6 +47,27 @@ class AttendanceController extends Controller
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
+    }
+
+    public function AttendanceTeacherReportEdit($id) {
+        $data['allData'] = Attendance::with('student.company')->orderBy('attendances.date', 'DESC')->find($id);
+        $data['teachers'] = Attendance::with('attendance')->find($id);
+        return view('admin.pages.attendance.attendance_edit', $data);
+    }
+
+    public function AttendanceTeacherReportUpdate(Request $request, $id) { 
+                $attend =  Attendance::find($id);
+                $attend->teacher_id = $request->teacher_id;
+                $attend->date = $request->date;
+                $attend->student_id = $request->student_id;
+                $attend->attend_status = $request->attend_status;
+                $attend->save();
+          
+        $notification = array(
+            'message' => 'Students Attendance Successfully Updated.',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('admin.pages.attendance.report_view')->with($notification);
     }
 
     public function AttendanceTeacherReportDelete($id) {

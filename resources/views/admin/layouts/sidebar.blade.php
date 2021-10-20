@@ -11,8 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          {{-- <img src="{{ asset('backend/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image"> --}}
-        </div>
+          <img class="h-8 w-8 rounded-full object-cover" style="width: 25px; border-radius: 50%;" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />        </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
@@ -57,12 +56,7 @@
                   <p>Levels</p>
                 </a>
               </li>
-              {{-- <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-chalkboard-teacher nav-icon"></i>
-                  <p>Teachers</p>
-                </a>
-              </li> --}}
+              
               <li class="nav-item">
                 <a href="{{ route('admin.pages.students.view') }}" class="nav-link">
                   <i class="fas fa-school nav-icon"></i>

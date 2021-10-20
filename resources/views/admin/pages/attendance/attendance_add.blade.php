@@ -25,8 +25,8 @@
                 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Select Date</label>
-                            <input class="form-control" type="date" name="date">  
+                            <label for="date">Select Date</label>
+                            <input class="form-control" type="date" value="{{ date('Y-m-d') }}" name="date" required>  
                         </div>
                     </div><!--End col md 12-->
                 </div><!--end row-->

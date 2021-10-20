@@ -17,9 +17,9 @@ class Company extends Model
     //     return $this->hasMany(Company::class, 'company_id', 'id');
     // }
 
-    // public function studentRelation() {
-    //     return $this->hasMany(Student::class, 'company_id', 'id');
-    // }
+     public function studentRelation() {
+         return $this->hasMany(Student::class, 'company_id', 'id');
+     }
 
    
 }
