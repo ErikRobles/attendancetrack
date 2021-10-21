@@ -9,7 +9,7 @@
             PARA EJECUTIVOS Y EMPRESAS</div>
         <div class="text-center">
             <button class="btn custom-button text-uppercase text-center" data-aos="fade-up" data-aos-delay="900"
-                data-aos-duration="1000"> <a class="text-white" href="contacto.html">Solicite
+                data-aos-duration="1000"> <a class="text-white" href="{{ route('contacto') }}">Solicite
                     Una Clase Demo Gratis
                 </a></button>
         </div>
@@ -19,7 +19,7 @@
 <div class="container pb-3 mb-3">
     <div class="floating-button">
         <div class="the-button">
-            <a href="inicio.html">Lionsfield<br>Online</a>
+            <a href="{{ route('inicio') }}">Lionsfield<br>Online</a>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
             <p class="infosec">Estamos orgullosos de proporcionar la más alta calidad en la enseñanza, los mejores
                 profesores y el mejor material de negocios disponible a nivel mundial.</p>
             <div class="aos-init" data-aos="zoom-in-down" data-aos-duration="1000"><a class="custom-link"
-                    href="contacto.html">SOLICITE UNA CLASE DEMO</a></div>
+                    href="{{ rotue('contacto') }}">SOLICITE UNA CLASE DEMO</a></div>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
                 estrat&eacute;gia
                 para alcanzar los mejores resultados en la capacitaci&oacute;n.</p>
             <div class="aos-init" data-aos="zoom-in-down" data-aos-duration="1000"><a class="custom-link"
-                    href="contacto.html">SABER MÁS</a></div>
+                    href="{{ route('contacto') }}">SABER MÁS</a></div>
         </div>
     </div>
     <div class="column text-center mb-3 mt-3">
@@ -65,7 +65,7 @@
                 alto
                 nivel.</p>
             <div class="aos-init" data-aos="zoom-in-down" data-aos-duration="1000"><a class="custom-link"
-                    href="contacto.html">SABER MÁS</a></div>
+                    href="{{ route('contacto') }}">SABER MÁS</a></div>
         </div>
     </div>
     <div class="column text-center mb-3 mt-3">
@@ -76,7 +76,7 @@
             <p class="infosec">Si piensa invertir en su educación, piense en los mejores. <br /><br />"Los buenos
                 profesores son costosos, pero los malos maestros cuestan aún más”. ~ Bob Talbert</p>
             <div class="aos-init" data-aos="zoom-in-down" data-aos-duration="1000"><a class="custom-link"
-                    href="contacto.html">SOLICITE UNA CLASE DEMO</a></div>
+                    href="{{ route('contacto') }}">SOLICITE UNA CLASE DEMO</a></div>
         </div>
     </div>
 </div>
@@ -93,14 +93,14 @@
     <figure class="gallery__item gallery__item--1 overlay">
         <img class="grow gallery__img" src="{{ asset('frontend/assets/img/Renault-e1437433948637.jpg') }}" alt="Gallery 1" />
         <div class="text-overlay-above">
-            <div class="text-content-above text-center"><a class="text-white" href="renault.html"><i
+            <div class="text-content-above text-center"><a class="text-white" href="{{ route('renault') }}"><i
                         class="fa fa-eye fa-2x circle-icon"></i></a></div>
         </div>
         <div class="text-overlay">
-            <div class="text-content text-center"><a href="renault.html">
+            <div class="text-content text-center"><a href="{{ route('renault') }}">
                     <h3 class="text-white">Renault</h3>
                 </a>
-                <a href="renault.html">
+                <a href="{{ route('renault') }}">
                     <p class="corporate-hover">Business Client</p>
                 </a>
             </div>
@@ -109,13 +109,13 @@
     <figure class="gallery__item gallery__item--2 overlay"><img class="gallery__img" src="{{ asset('frontend/assets/img/hsbc.jpg') }}"
             alt="Gallery 2" />
         <div class="text-overlay-above">
-            <div class="text-content-above text-center"><a class="text-white" href="hsbc.html"><i
+            <div class="text-content-above text-center"><a class="text-white" href="{{ route('hsbc') }}"><i
                         class="fa fa-eye fa-2x circle-icon"></i></a></div>
         </div>
         <div class="text-overlay">
-            <div class="text-content text-center"><a href="hsbc.html">
+            <div class="text-content text-center"><a href="{{ route('hsbc') }}">
                     <h3 class="text-white">HSBC</h3>
-                </a><a href="hsbc.html">
+                </a><a href="{{ route('hsbc') }}">
                     <p class="corporate-hover">Business Client</p>
                 </a></div>
         </div>
@@ -123,13 +123,13 @@
     <figure class="gallery__item gallery__item--3 overlay"><img class="gallery__img" src="{{ asset('frontend/assets/img/ge.jpg') }}"
             alt="Gallery 3" />
         <div class="text-overlay-above">
-            <div class="text-content-above text-center"><a class="text-white" href="ge.html"><i
+            <div class="text-content-above text-center"><a class="text-white" href="{{ route('ge') }}"><i
                         class="fa fa-eye fa-2x circle-icon"></i></a></div>
         </div>
         <div class="text-overlay">
-            <div class="text-content text-center"><a href="ge.html">
+            <div class="text-content text-center"><a href="{{ route('ge') }}">
                     <h3 class="text-white">GE</h3>
-                </a><a href="ge.html"></a>
+                </a><a href="{{ route('ge') }}"></a>
                 <p class="corporate-hover">Business Client</p>
             </div>
         </div>
@@ -137,13 +137,13 @@
     <figure class="gallery__item gallery__item--4 overlay"><img class="gallery__img"
             src="{{ asset('frontend/assets/img/holiday-inn.jpg') }}" alt="Gallery 4" />
         <div class="text-overlay-above">
-            <div class="text-content-above text-center"><a class="text-white" href="holiday-inn.html"><i
+            <div class="text-content-above text-center"><a class="text-white" href="{{ route('holiday_inn') }}"><i
                         class="fa fa-eye fa-2x circle-icon"></i></a></div>
         </div>
         <div class="text-overlay">
-            <div class="text-content text-center"> <a href="holiday-inn.html">
+            <div class="text-content text-center"> <a href="{{ route('holiday_inn') }}">
                     <h3 class="text-white">Holiday Inn</h3>
-                </a><a href="holiday-inn.html">
+                </a><a href="{{ route('holiday_inn') }}">
                     <p class="corporate-hover">Business Client</p>
                 </a></div>
         </div>
@@ -151,13 +151,13 @@
     <figure class="gallery__item gallery__item--5 overlay"><img class="gallery__img" src="{{ asset('frontend/assets/img/toyota.jpg') }}"
             alt="Gallery 5" />
         <div class="text-overlay-above">
-            <div class="text-content-above text-center"><a class="text-white" href="toyota.html"><i
+            <div class="text-content-above text-center"><a class="text-white" href="{{ route('toyota') }}"><i
                         class="fa fa-eye fa-2x circle-icon"></i></a></div>
         </div>
         <div class="text-overlay">
-            <div class="text-content text-center"><a href="toyota.html">
+            <div class="text-content text-center"><a href="{{ route('toyota') }}">
                     <h3 class="text-white">Toyota</h3>
-                </a><a href="toyota.html">
+                </a><a href="{{ route('toyota') }}">
                     <p class="corporate-hover">Business Client</p>
                 </a></div>
         </div>
@@ -165,13 +165,13 @@
     <figure class="gallery__item gallery__item--6 overlay"><img class="gallery__img" src="{{ asset('frontend/assets/img/hiab.jpg') }}"
             alt="Gallery 6" />
         <div class="text-overlay-above">
-            <div class="text-content-above text-center"><a class="text-white" href="hiab.html"><i
+            <div class="text-content-above text-center"><a class="text-white" href="{{ route('hiab') }}"><i
                         class="fa fa-eye fa-2x circle-icon"></i></a></div>
         </div>
         <div class="text-overlay">
-            <div class="text-content text-center"><a href="hiab.html">
+            <div class="text-content text-center"><a href="{{ route('hiab') }}">
                     <h3 class="text-white">Hiab</h3>
-                </a><a href="hiab.html">
+                </a><a href="{{ route('hiab') }}">
                     <p class="corporate-hover">Business Client</p>
                 </a></div>
         </div>
@@ -190,7 +190,7 @@
                 <p class="pt-5 pb-5">La tecnología avanza de manera increíble, y nos preciamos de mantenemos
                     actualizados con las nuevas herramientas y novedades pedagógicas para brindarle la mejor
                     experiencia de aprendizaje.</p>
-                <button class="custom-button-2 text-uppercase mb-5"><a href="metodologia.html">Ver
+                <button class="custom-button-2 text-uppercase mb-5"><a href="{{ route('metodologia') }}">Ver
                         Detalles</a></button>
             </div>
         </div>
@@ -258,50 +258,50 @@
     <div class="owl-carousel owl-theme">
         <div class="active">
             <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center"
-                    href="win-win.html">Win All or Win-Win</a>
+                    href="{{ route('win_win') }}">Win All or Win-Win</a>
                 <p class="blog p-1">The article we are going to look at talks about the attitude with which one must
                     face in a negotiation, the spirit in which...</p>
-                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="erik.html"
+                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="{{ route('erik') }}"
                             title="Posts by Erik James Robles" rel="author">Erik Robles</a><i
                             class="far fa-comments"><a href="#">0</a></i></i></div>
             </div>
         </div>
         <div>
-            <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center" href="terrible.html">A Terrible and
+            <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center" href="{{ route('terrible') }}">A Terrible and
                     Terrific Christmas</a>
                 <p class="blog p-1">Here is a Story that one of our students shared with us about her Christmas trip
                     to the United States. It was Christmas...</p>
-                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="erik.html"
+                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="{{ route('erik') }}"
                             title="Posts by Erik James Robles" rel="author">Erik Robles</a><i
                             class="far fa-comments"><a href="#">0</a></i></i></div>
             </div>
         </div>
         <div>
-            <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center" href="mergers.html">Mergers and
+            <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center" href="{{ route('mergers') }}">Mergers and
                     Acquisitions</a>
                 <p class="blog p-1">Today&rsquo;s word search is about Mergers and Acquisitions. Make sure to click
                     on each word and follow the link to find the...</p>
-                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="erik.html"
+                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="{{ route('erik') }}"
                             title="Posts by Erik James Robles" rel="author">Erik Robles</a><i
                             class="far fa-comments"><a href="#">0</a></i></i></div>
             </div>
         </div>
         <div>
             <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center"
-                    href="aviso-de-privacidad.html">Aviso de Privacidad Intregal</a>
+                    href="{{ route('aviso_de_privacidad') }}">Aviso de Privacidad Intregal</a>
                 <p class="blog p-1">El presente documento constituye el Aviso de privacidad de Privacidad para
                     efectos de lo dispuesto en la Ley Federal de...</p>
-                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="admin.html"
+                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="{{ route('admin') }}"
                             title="Posts by Administrador" rel="author">Administrador</a><i
                             class="far fa-comments"><a href="#">0</a></i></i></div>
             </div>
         </div>
         <div>
-            <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center" href="how-the-brain-works.html">How
+            <div class="blog-box p-3 mt-4"><a class="blog-title p-2 text-center" href="{{ route('how_the_brain_works') }}">How
                     the Brain Learns...</a>
                 <p class="blog p-1">Today, we introduce a new category for teachers and people interested in
                     learning in general. This post comes from another fellow...</p>
-                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="erik.html"
+                <div class="meta-author author pt-3 pb-3"><i class="far fa-user"><a href="{{ route('erik') }}"
                             title="Posts by Erik James Robles" rel="author">Erik Robles</a><i
                             class="far fa-comments"><a href="#">0</a></i></i></div>
             </div>

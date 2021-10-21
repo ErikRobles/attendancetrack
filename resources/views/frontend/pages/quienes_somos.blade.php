@@ -8,7 +8,7 @@
         LIDERAZGO EN CAPACITACIÓN DE IDIOMAS</div>
       <div class="text-center">
         <button class="btn custom-button text-uppercase text-center" data-aos="fade-up" data-aos-delay="900"
-          data-aos-duration="1000"> <a class="text-white" href="contacto.html">Solicite Una Clase Demo Gratis
+          data-aos-duration="1000"> <a class="text-white" href="{{ route('contacto') }}">Solicite Una Clase Demo Gratis
           </a></button>
       </div>
     </div>

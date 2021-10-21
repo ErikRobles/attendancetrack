@@ -38,7 +38,7 @@
         <div class="copyright-bar">
             <p class="copyright">
                 &copy;
-                Copyright <a class="company" href="index.html" title="Lionsfield"><span
+                Copyright <a class="company" href="{{ route('home') }}" title="Lionsfield"><span
                         style="font-weight: bold; color: #fff;">Magisterial Education America,
                         LLC</span></a><br />&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Smart Start Theme by <a
                     href="http://www.rrspark.com"><span style="font-weight: bold; color: #fff;">RR Spark</span></a>

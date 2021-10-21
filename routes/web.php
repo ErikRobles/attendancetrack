@@ -8,6 +8,8 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\LionsfieldController;
+use App\Http\Controllers\LionsfieldTwoController;
+use App\Http\Controllers\ChangePasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('redirects', 'App\Http\Controllers\HomeController@index');
     Route::get('logout', [HomeController::class, 'Logout'])->name('logout');
     Route::get('admin/dashboard', [HomeController::class, 'AdminDashboard'])->name('admin.dashboard');
+    Route::get('change/password', [ChangePasswordController::class, 'ChangePassword'])->name('change.password');
+    Route::post('password/update', [ChangePasswordController::class, 'UpdatePassword'])->name('password.update');
     // User routes
     Route::get('admin/pages/users/users_view', [UserController::class, 'ViewUsers'])->name('admin.pages.users.users_view');
     Route::get('admin/pages/users/users_add', [UserController::class, 'AddUsers'])->name('admin.pages.users.user_add');
@@ -73,8 +77,30 @@ Route::group(['middleware' => 'auth'], function() {
 // HomePage Lionsfield Routes Front End One
     Route::get('frontend/index', [LionsfieldController::class, 'Home'])->name('home');
     Route::get('frontend/pages/quienes_somos', [LionsfieldController::class, 'Quienes'])->name('quienes_somos');
+    Route::get('frontend/pages/nuestros_clientes', [LionsfieldController::class, 'Clientes'])->name('nuestros_clientes');
+    Route::get('frontend/pages/metodologia', [LionsfieldController::class, 'Metodologia'])->name('metodologia');
+    Route::get('frontend/pages/certificaciones', [LionsfieldController::class, 'Certificaciones'])->name('certificaciones');
+    Route::get('frontend/pages/contacto', [LionsfieldController::class, 'Contacto'])->name('contacto');
+
+    // Internal links
+    Route::get('frontend/pages/internals/renault', [LionsfieldController::class, 'Renault'])->name('renault');
+    Route::get('frontend/pages/internals/hsbc', [LionsfieldController::class, 'Hsbc'])->name('hsbc');
+    Route::get('frontend/pages/internals/ge', [LionsfieldController::class, 'Ge'])->name('ge');
+    Route::get('frontend/pages/internals/holiday_inn', [LionsfieldController::class, 'HolidayInn'])->name('holiday_inn');
+    Route::get('frontend/pages/internals/toyota', [LionsfieldController::class, 'Toyota'])->name('toyota');
+    Route::get('frontend/pages/internals/hiab', [LionsfieldController::class, 'Hiab'])->name('hiab');
+    Route::get('frontend/pages/internals/win_win', [LionsfieldController::class, 'WinWin'])->name('win_win');
+    Route::get('frontend/pages/internals/erik', [LionsfieldController::class, 'Erik'])->name('erik');
+    Route::get('frontend/pages/internals/admin', [LionsfieldController::class, 'AdminProfile'])->name('admin');
+    Route::get('frontend/pages/internals/terrible', [LionsfieldController::class, 'Terrible'])->name('terrible');
+    Route::get('frontend/pages/internals/mergers', [LionsfieldController::class, 'Mergers'])->name('mergers');
+    Route::get('frontend/pages/internals/how_the_brain_works', [LionsfieldController::class, 'HowBrain'])->name('how_the_brain_works');
+    Route::get('frontend/pages/internals/aviso_de_privacidad', [LionsfieldController::class, 'AvisoPrivacidad'])->name('aviso_de_privacidad');
+
+
+
 
 
 // HomePage Lionsfield Routes Front End Two
-    Route::get('frontend_inicio/index', [LionsfieldTwoController::class, 'Home'])->name('inicio');
+    Route::get('frontend_inicio/index', [LionsfieldTwoController::class, 'Inicio'])->name('inicio');
 

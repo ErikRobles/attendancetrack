@@ -32,11 +32,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('profile.show') }}" class="nav-link">
-                  <i class="fas fa-user nav-icon"></i>
-                  <p>Profile</p>
-                </a>
+              
               @if(Auth::user()->role == 'Admin')
               <li class="nav-item">
                 <a href="{{ route('admin.pages.users.users_view') }}" class="nav-link">
@@ -67,6 +63,7 @@
             </ul>
           </li>
         </ul>
+        @if(Auth::user()->role == 'Admin')
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
@@ -79,25 +76,36 @@
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                @if(Auth::user()->role == 'Admin')
+               
                 <li class="nav-item">
                   <a href="{{ route('admin.pages.attendance.report_view') }}" class="nav-link">
                     <i class="fas fa-clipboard-list nav-icon"></i>
                     <p>Attendance</p>
                   </a>
                 </li>
-                @endif
-                <li class="nav-item">
-                  <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="nav-link">
-                    <i class="fas fa-pen-square nav-icon"></i>
-                    <p>Add Attendance</p>
-                  </a>
-                </li>
-
               </ul>
             </li>
           </ul>
+          @endif
           <ul class="nav nav-sidebar flex-column">
+            <li class="nav-item">
+              <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="nav-link">
+                <i class="fas fa-pen-square nav-icon"></i>
+                <p>Add Attendance</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('profile.show') }}" class="nav-link">
+                <i class="fas fa-user nav-icon"></i>
+                <p>Profile</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('change.password') }}" class="nav-link">
+                <i class="fas fa-key nav-icon"></i>
+                <p>Change Password</p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="{{ route('logout') }}" class="nav-link">
                 <i class="fas fa-power-off nav-icon"></i>
