@@ -10,6 +10,14 @@
   </div>
   <div class="container-2 p-2">
     <div class="row">
+      @if(Session::has('success'))
+      <div class="alert alert-success">
+          {{ Session::get('success') }}
+          @php
+              Session::forget('success');
+          @endphp
+      </div>
+      @endif
       <div class="col-md-8">
         <main class="p-2">
           <h5 class="contact-form-header mb-3">Solicitud de Contacto</h5>
@@ -17,7 +25,8 @@
             Por favor, proporcione los siguientes datos para recibir mayor información. A la brevedad, uno de nuestros
             ejecutivos le atenderá. Siéntase seguro, sus datos se encuentran progetidos por nuestra política de
             privacidad, la cual puede consultar al final de esta página. </p>
-          <form class="contact-form pb-3" method="post" id="contactform" action="contactform.php">
+          <form class="contact-form pb-3" method="post" id="contactform" action="{{ route('contact-form.store') }}">
+            @csrf
             <div class="form-row">
               <div class="form-group col-md-10">
                 <label class="content-2" for="name">Nombre Completo (Campo Requerido)</label>
@@ -57,16 +66,22 @@
               <br /><br />
               <div class="form-group col-md-10">
                 <label class="content-2" for="message">Mensaje (Campo Requerido)</label>
-                <textarea placeholder="Mensaje" class="form-control" name="message" id="message" type="text"></textarea>
+                <textarea placeholder="Mensaje" class="form-control" name="mensaje" id="message" type="text"></textarea>
               </div>
               <br /><br />
-
+              
               <br /><br />
             </div>
             <div class="g-recaptcha" data-sitekey="6LdQid8ZAAAAAF_Stq_7uV5Rjl1yZLrlaYE4TBIC"></div>
+            <div class="form-group sweet-stuff">
+              <label for="faxonly">Fax Only
+               <input type="checkbox" name="faxonly" id="faxonly" />
+              </label>
+             </div>
             <input style="float: left; margin-bottom: 30px;" class="mt-3 btn btn-dark" type="submit" value="ENVIAR"
               name="submit" />
             <br /><br />
+            
           </form>
         </main>
       </div>
@@ -86,4 +101,41 @@
       </div>
     </div>
   </div>
+  <script>
+    $('input[type="email"]')
+      .on('invalid', function () {
+        return this.setCustomValidity('Por favor ingresa una dirección de correo válida.');
+      })
+      .on('input', function () {
+        return this.setCustomValidity('');
+      });
+    $('input[type="tel"]')
+      .on('invalid', function () {
+        return this.setCustomValidity('Por favor introduce un número válido de teléfono');
+      })
+      .on('input', function () {
+        return this.setCustomValidity('');
+      });
+    $('input[type="name"]')
+      .on('invalid', function () {
+        return this.setCustomValidity('Por favor introduce su nombre completo');
+      })
+      .on('input', function () {
+        return this.setCustomValidity('');
+      });
+    $('input[type="empresa"]')
+      .on('invalid', function () {
+        return this.setCustomValidity('Por favor introduce el nombre de su empresa');
+      })
+      .on('input', function () {
+        return this.setCustomValidity('');
+      });
+    $('input[type="message"]')
+      .on('invalid', function () {
+        return this.setCustomValidity('Por favor introduce su mensaje');
+      })
+      .on('input', function () {
+        return this.setCustomValidity('');
+      });
+  </script>
 @endsection

@@ -39,7 +39,7 @@
             <p class="infosec">Estamos orgullosos de proporcionar la más alta calidad en la enseñanza, los mejores
                 profesores y el mejor material de negocios disponible a nivel mundial.</p>
             <div class="aos-init" data-aos="zoom-in-down" data-aos-duration="1000"><a class="custom-link"
-                    href="{{ rotue('contacto') }}">SOLICITE UNA CLASE DEMO</a></div>
+                    href="{{ route('contacto') }}">SOLICITE UNA CLASE DEMO</a></div>
         </div>
     </div>
 

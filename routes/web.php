@@ -5,8 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\ContactTwoController;
 use App\Http\Controllers\LionsfieldController;
 use App\Http\Controllers\LionsfieldTwoController;
 use App\Http\Controllers\ChangePasswordController;
@@ -72,6 +74,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/pages/attendance/attendance_edit/{id}', [AttendanceController::class, 'AttendanceTeacherReportEdit'])->name('admin.pages.attendance.attendance_edit');
     Route::post('admin/pages/attendance/attendance_update/{id}', [AttendanceController::class, 'AttendanceTeacherReportUpdate'])->name('admin.pages.attendance.attendance_update');
     Route::get('admin/pages/attendance/attendance_delete/{id}', [AttendanceController::class, 'AttendanceTeacherReportDelete'])->name('admin.pages.attendance.attendance_delete');
+    // Frontend one Contact messages
+    Route::get('admin/contact_messages/frontend_messages_view', [ContactController::class, 'FrontendContactMessagesView'])->name('front_end_messages');
+    Route::post('/contact-form', [ContactController::class, 'storeContactForm'])->name('contact-form.store');
+    Route::get('/delete_contact/{id}', [ContactController::class, 'deleteContactMessage'])->name('delete_contact');
+    // Frontend two Contact messages
+    Route::get('admin/contact_messages/frontend_two_messages_view', [ContactTwoController::class, 'frontendTwoContactMessagesView'])->name('front_end_two_messages');
+
 });
 
 // HomePage Lionsfield Routes Front End One
@@ -97,7 +106,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('frontend/pages/internals/how_the_brain_works', [LionsfieldController::class, 'HowBrain'])->name('how_the_brain_works');
     Route::get('frontend/pages/internals/aviso_de_privacidad', [LionsfieldController::class, 'AvisoPrivacidad'])->name('aviso_de_privacidad');
 
-
+    // Contact routes
+    Route::get('frontend/contact/contacts', [ContactController::class, 'ContactMessages'])->name('contacts');
+    
 
 
 

@@ -27,8 +27,15 @@
     <link href="{{ asset('frontend/stylesheets/owl.theme.default.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
+    <!--Toastr-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link rel="stylesheet" href="{{ asset('frontend/scss/style.css') }}">
     <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
 
     <title>Lionsfield | Inglés de Negocios para Ejecutivos y Empresas</title>
 </head>
+<style>
+div.sweet-stuff {
+    display: none;
+}
+</style>

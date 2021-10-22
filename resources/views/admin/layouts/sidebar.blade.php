@@ -52,11 +52,22 @@
                   <p>Levels</p>
                 </a>
               </li>
-              
               <li class="nav-item">
                 <a href="{{ route('admin.pages.students.view') }}" class="nav-link">
                   <i class="fas fa-school nav-icon"></i>
                   <p>Students</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('front_end_messages') }}" class="nav-link">
+                  <i class="fas fa-envelope nav-icon"></i>
+                  <p>Front End Messages</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('front_end_two_messages') }}" class="nav-link">
+                  <i class="fas fa-envelope-open-text nav-icon"></i>
+                  <p>Front End Two Messages</p>
                 </a>
               </li>
               @endif
