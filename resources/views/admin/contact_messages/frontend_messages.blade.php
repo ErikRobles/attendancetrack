@@ -3,7 +3,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="content-wrapper p-3">
-<h1>General Attendance Report</h1>
+<h1>Lionsfield MX Messages</h1>
 <div class="row">
     <div class="col-12">
       <div class="card">

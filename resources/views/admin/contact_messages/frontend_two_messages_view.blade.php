@@ -3,10 +3,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="content-wrapper p-3">
-<h1>General Attendance Report</h1>
+<h1>Lionsfield MX Front End Two - Messages</h1>
 <div class="row">
     <div class="col-12">
-        <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="btn btn-success btn-rounded mb-3">Add Attendance</a>
       <div class="card">
         <div class="card-header mb-2">
           <h3 class="card-title">Lionsfield MX Front End Two Messages</h3>
