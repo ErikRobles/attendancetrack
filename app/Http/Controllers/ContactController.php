@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\ContactTwo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -70,9 +71,7 @@ class ContactController extends Controller
             'message' => 'Message Successfully Deleted',
             'alert-type' => 'success'
         );
-        return Redirect()-route('front_end_messages')->with($notification);
-    }
-
-  
+        return Redirect()->route('front_end_messages')->with($notification);
+    } 
 }
 

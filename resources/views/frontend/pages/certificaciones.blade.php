@@ -70,7 +70,7 @@
             <div class="row">
               <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 holder">
                 <div class="step">
-                  <span><i class="fa fa-lightbulb-o fa-4x circle-icon-3"></i>
+                  <span><i class="fa fa-lightbulb fa-4x circle-icon-3"></i>
                     <div class="done">Examen de Colocación</div>
                   </span>
                 </div>
@@ -86,7 +86,7 @@
               </div>
               <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 holder">
                 <div class="step done">
-                  <span><i class="fa fa-pencil fa-4x circle-icon-4"></i>
+                  <span><i class="fas fa-pencil-alt fa-4x circle-icon-4"></i>
                     <div class="done">Niveles Avanzados</div>
                   </span>
                 </div>
@@ -156,7 +156,7 @@
     <div class="row pb-3">
         <div class="col-lg-4">
             <div class="float-right satisfaction-icon" data-aos="flip-left" data-aos-duration="2000"><i
-                    class="fa fa-diamond fa-2x circle-icon"></i></div>
+                    class="fa fa-gem fa-2x circle-icon"></i></div>
             <h5 class="satisfaction">Puntuaciones más Altas</h5>
             <p class="satisfaction-text pb-5 mb-3">Nuestros alumnos obtienen puntuaciones muy superiores en los
                 exámenes de certificación estandarizados.</p>
@@ -178,7 +178,7 @@
         </div>
         <div class="col-lg-4">
             <div class="float-left satisfaction-icon" data-aos="flip-left" data-aos-duration="2000"><i
-                    class="fa fa-money fa-2x circle-icon"></i></div>
+                    class="fa fa-money-bill fa-2x circle-icon"></i></div>
             <h5 class="satisfaction-right">Certificaciones de Negocios</h5>
             <p class="satisfaction-text-right pb-5 mb-3">Contamos con cursos de preparación para exámenes
                 especializados en inglés de negocios, como BULATS y BEC</p>

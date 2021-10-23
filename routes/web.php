@@ -80,11 +80,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/delete_contact/{id}', [ContactController::class, 'deleteContactMessage'])->name('delete_contact');
     // Frontend two Contact messages
     Route::get('admin/contact_messages/frontend_two_messages_view', [ContactTwoController::class, 'frontendTwoContactMessagesView'])->name('front_end_two_messages');
-
+    Route::post('/contact-form2', [ContactTwoController::class, 'storeContactForm2'])->name('contact-form2.store');
+    Route::get('/delete_contact2/{id}', [ContactTwoController::class, 'deleteContactMessage2'])->name('delete_contact2');
 });
 
 // HomePage Lionsfield Routes Front End One
-    Route::get('frontend/index', [LionsfieldController::class, 'Home'])->name('home');
+    Route::get('home', [LionsfieldController::class, 'Home'])->name('home');
     Route::get('frontend/pages/quienes_somos', [LionsfieldController::class, 'Quienes'])->name('quienes_somos');
     Route::get('frontend/pages/nuestros_clientes', [LionsfieldController::class, 'Clientes'])->name('nuestros_clientes');
     Route::get('frontend/pages/metodologia', [LionsfieldController::class, 'Metodologia'])->name('metodologia');
@@ -105,13 +106,48 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('frontend/pages/internals/mergers', [LionsfieldController::class, 'Mergers'])->name('mergers');
     Route::get('frontend/pages/internals/how_the_brain_works', [LionsfieldController::class, 'HowBrain'])->name('how_the_brain_works');
     Route::get('frontend/pages/internals/aviso_de_privacidad', [LionsfieldController::class, 'AvisoPrivacidad'])->name('aviso_de_privacidad');
+    // Landing Pages
+    Route::get('home1', [LionsfieldController::class, 'Home1'])->name('home1');
+    Route::get('home2', [LionsfieldController::class, 'Home2'])->name('home2');
+    Route::get('home3', [LionsfieldController::class, 'Home3'])->name('home3');
+    Route::get('home4', [LionsfieldController::class, 'Home4'])->name('home4');
+    Route::get('home5', [LionsfieldController::class, 'Home5'])->name('home5');
+    Route::get('home6', [LionsfieldController::class, 'Home6'])->name('home6');
+    Route::get('home7', [LionsfieldController::class, 'Home7'])->name('home7');
+    Route::get('home8', [LionsfieldController::class, 'Home8'])->name('home8');
+    Route::get('home9', [LionsfieldController::class, 'Home9'])->name('home9');
 
     // Contact routes
     Route::get('frontend/contact/contacts', [ContactController::class, 'ContactMessages'])->name('contacts');
-    
-
 
 
 // HomePage Lionsfield Routes Front End Two
-    Route::get('frontend_inicio/index', [LionsfieldTwoController::class, 'Inicio'])->name('inicio');
+    Route::get('inicio', [LionsfieldTwoController::class, 'Inicio'])->name('inicio');
+    Route::get('frontend_inicio/pages/about_us', [LionsfieldTwoController::class, 'AboutUs'])->name('about_us');
+    // # Route
+    Route::get('price-plan', [LionsfieldTwoController::class, 'PricePlan'])->name('price-plan');
+
+    Route::get('contact_us', [LionsfieldTwoController::class, 'ContactUs'])->name('contact_us');
+    Route::get('metodo', [LionsfieldTwoController::class, 'Metodo'])->name('metodo');
+    Route::get('avido_de_privacidad_2', [LionsfieldTwoController::class, 'AvisoDePrivacidad2'])->name('aviso_de_privacidad_2');
+    Route::get('admin_2', [LionsfieldTwoController::class, 'Admin2'])->name('admin_2');
+    Route::get('erik_2', [LionsfieldTwoController::class, 'Erik2'])->name('erik_2');
+    Route::get('ge_2', [LionsfieldTwoController::class, 'Ge2'])->name('ge_2');
+    Route::get('hiab_2', [LionsfieldTwoController::class, 'Hiab2'])->name('hiab_2');
+    Route::get('holiday_inn_2', [LionsfieldTwoController::class, 'HolidayInn2'])->name('holiday_inn_2');
+    Route::get('how_the_brain_works_2', [LionsfieldTwoController::class, 'HowBrain2'])->name('how_the_brain_works_2');
+    Route::get('hsbc_2', [LionsfieldTwoController::class, 'Hsbc2'])->name('hsbc_2');
+    Route::get('mergers_2', [LionsfieldTwoController::class, 'Mergers2'])->name('mergers_2');
+    Route::get('renault_2', [LionsfieldTwoController::class, 'Renault2'])->name('renault_2');
+    Route::get('terrible_2', [LionsfieldTwoController::class, 'Terrible2'])->name('terrible_2');
+    Route::get('toyota_2', [LionsfieldTwoController::class, 'Toyota2'])->name('toyota_2');
+    Route::get('win_win_2', [LionsfieldTwoController::class, 'WinWin2'])->name('win_win_2');
+    // Sales Pages
+    Route::get('clases-grupales', [LionsfieldTwoController::class, 'ClasesGrupales'])->name('clases-grupales');
+    Route::get('clases-individuales', [LionsfieldTwoController::class, 'ClasesIndividuales'])->name('clases-individuales');
+    Route::get('clase-_premier', [LionsfieldTwoController::class, 'ClasePremier'])->name('clase-premier');
+    // Paypal Pages
+    Route::get('payment-cancel-2', [LionsfieldTwoController::class, 'PaymentCancelTwo'])->name('payment-cancel-2');
+    Route::get('success-confirmation-two', [LionsfieldTwoController::class, 'SuccessConfirmationTwo'])->name('success-confirmation-two');
+
 

@@ -35,17 +35,16 @@
                 @foreach($frontendTwoMessages as $message)
               <tr>
                 <td>{{ $message->name }}</td>
-                <td>
-                    {{ $message->empresa }}
-                </td>
+                <td>{{ $message->empresa }}</td>
                 <td>{{ $message->mail }}</td>
                 <td>{{ $message->tel1 }}</td>
                 <td>{{ $message->tel3 }}</td>
                 <td>{{ $message->tel2 }}</td>
+                <td>{{ $message->pais }}</td>
                 <td>{{ $message->mensaje }}</td>
                 <td>{{ date('d-m-Y', strtotime($message->created_at)) }}</td>  
                 <td>
-                    <a href="{{ route('delete_contact', $message->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('delete_contact2', $message->id) }}" class="btn btn-danger">Delete</a>
                 </td>
                 
             </tr>

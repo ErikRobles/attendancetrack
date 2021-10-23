@@ -8,7 +8,7 @@
                     a&ntilde;os en el mercado, ponemos a su disposici&oacute;n nuestro programa de
                     capacitaci&oacute;n en M&eacute;xico.</p><br /><br />
                 <h3 class="footer-header">AVISO DE PRIVACIDAD</h3>
-                <p><a href="aviso-de-privacidad.html" style="font-size: 16px; color: #fff;">Haga clic
+                <p><a href="{{ route('aviso_de_privacidad') }}" style="font-size: 16px; color: #fff;">Haga clic
                         aqu&iacute;</a></p>
             </div>
             <div class="columnB">

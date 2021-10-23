@@ -19,9 +19,9 @@ class CreateContactTwosTable extends Migration
             $table->string('empresa');
             $table->string('mail');
             $table->string('tel1');
-            $table->string('tel3');
-            $table->string('tel2');
-            $table->string('pais');
+            $table->string('tel3')->nullable();
+            $table->string('tel2')->nullable();
+            $table->string('pais')->nullable();
             $table->text('mensaje');
             $table->timestamps();
         });

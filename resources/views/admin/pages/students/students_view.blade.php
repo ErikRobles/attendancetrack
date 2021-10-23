@@ -1,5 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div class="content-wrapper p-3">
 <h1>All Students</h1>
 <div class="row">
@@ -20,10 +22,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> 
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
-          <table class="table table-hover text-nowrap">
+          <table class="table table-hover text-nowrap" id="studentTable">
             <thead>
               <tr>
                 <th>ID</th>
@@ -59,4 +61,9 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready( function () {
+    $('#studentTable').DataTable();
+} );
+</script>
 @endsection

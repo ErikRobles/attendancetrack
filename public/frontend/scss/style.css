@@ -69,7 +69,7 @@ html {
 }
 
 body {
-  font: 'Helvetica Neue', Helvetica, sans-serif;
+  font: "Helvetica Neue", Helvetica, sans-serif;
   color: #444;
   overflow-x: hidden;
 }
@@ -90,7 +90,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Raleway, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Raleway, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700;
   color: #333333;
 }
@@ -98,7 +98,7 @@ h6,
 /* clear */
 .clear:before,
 .clear:after {
-  content: ' ';
+  content: " ";
   display: table;
 }
 
@@ -181,7 +181,7 @@ input:focus {
 }
 
 .subheading {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   color: #999;
   margin-top: 20px;
@@ -190,7 +190,7 @@ input:focus {
 
 .caption {
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 5.15vw;
   text-shadow: black 2px 2px;
 }
@@ -198,7 +198,7 @@ input:focus {
 .sub-caption {
   color: #fff;
   font-size: 2.4vw;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-shadow: 2px 1px #000000;
 }
 
@@ -250,7 +250,7 @@ input:focus {
 
 .custom-button {
   line-height: 1.5;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-width: 0px;
   margin: 0px 10px 0px 0px;
   padding: 15px 20px 14px;
@@ -275,7 +275,7 @@ input:focus {
 
 .custom-button-3 {
   line-height: 1.5;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-width: 0px;
   margin: 0px 10px 0px 0px;
   padding: 30px 45px;
@@ -296,7 +296,7 @@ a.custom-link {
   font-size: 12px;
   color: #fff !important;
   background-color: #2f3539 !important;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   margin: 0px 0px 20px 0px;
   text-decoration: none;
   line-height: 1;
@@ -305,7 +305,7 @@ a.custom-link {
 }
 
 .heading {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 38px;
   color: #333;
   margin: 20px 0;
@@ -329,7 +329,7 @@ a.custom-link {
 .heading-underline:before,
 .heading-underline:after {
   position: absolute;
-  content: '';
+  content: "";
   display: block;
   bottom: 22px;
   width: 40%;
@@ -406,7 +406,7 @@ h6.small-p-headers {
 .nuestros-clientes {
   color: #fff;
   font-size: 38px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
 }
 
@@ -417,7 +417,7 @@ h6.small-p-headers {
 }
 
 .light {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.2rem;
   color: #a1a9ae;
   text-align: center;
@@ -425,12 +425,12 @@ h6.small-p-headers {
 
 h5 {
   font-size: 20px !important;
-  font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 h6 {
   font-size: 16px;
-  font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .ast {
@@ -459,7 +459,7 @@ h6 {
 
 /* Clear floats after columns */
 .row:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -1387,7 +1387,7 @@ figure.overlay {
 }
 
 .overlay:after {
-  content: '\A';
+  content: "\A";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1466,8 +1466,10 @@ figure.overlay {
 }
 
 .fa-lightbulb-o,
+.fa-lightbulb,
 .fa-bolt,
 .fa-pencil,
+.fa-pencil-alt,
 .fa-laptop,
 .fa-code,
 .fa-rocket {
@@ -1481,6 +1483,14 @@ figure.overlay {
 
 .fa-bolt {
   padding: 20px 30px;
+}
+
+.fa-laptop {
+  padding: 20px 18px;
+}
+
+.fa-code {
+  padding: 20px 17px;
 }
 
 .fa-rocket {
@@ -1687,14 +1697,14 @@ blockquote {
 blockquote h4 {
   color: #c7e2ef;
   font-size: 20px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
   font-style: italic;
 }
 
 blockquote h4:before {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f10d';
+  font-family: "Font Awesome 5 Free";
+  content: "\f10d";
   font-weight: bold;
   font-size: 30px;
   color: #c7e2ef;
@@ -1703,8 +1713,8 @@ blockquote h4:before {
 }
 
 blockquote h4:after {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f10e';
+  font-family: "Font Awesome 5 Free";
+  content: "\f10e";
   font-weight: bold;
   font-size: 30px;
   color: #c7e2ef;
@@ -1736,20 +1746,22 @@ blockquote h4:after {
 }
 
 .fa-user,
-.fa-comment-0 {
+.fa-comment-0,
+.fa-comment {
   font-size: 26px;
   color: #ec675d;
   fill: none;
 }
 
 .fa-user a,
-.fa-comment-0 a {
+.fa-comment-0 a,
+.fa-comment a {
   padding-right: 5px;
   padding-left: 5px;
 }
 
 .blog {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif !important;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif !important;
   font-size: 17px !important;
   color: #999 !important;
   margin-left: auto !important;
@@ -1825,7 +1837,7 @@ span.blog-author {
 a.blog-title {
   text-decoration: none !important;
   font-size: 20px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #333;
   font-weight: bold;
 }
@@ -1889,16 +1901,16 @@ a.blog-title:hover {
 }
 
 .carousel-control-next-icon:after {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f054';
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
   font-size: 55px;
   color: #eb5858;
   font-weight: 900;
 }
 
 .carousel-control-prev-icon:after {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f053';
+  font-family: "Font Awesome 5 Free";
+  content: "\f053";
   font-size: 55px;
   color: #eb5858;
   font-weight: 900;
@@ -1929,7 +1941,7 @@ a.blog-title:hover {
 .blog-heading-span {
   color: #333;
   font-size: 38px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
 }
 
@@ -1962,7 +1974,7 @@ a.blog-title:hover {
   color: #333;
   font-weight: bold;
   font-size: 20px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   margin: 20px 0px 15px;
 }
 
@@ -1973,7 +1985,7 @@ a.blog-title:hover {
 h4.title {
   font-size: 16px;
   color: #333;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   margin: 0px 0px 10px;
 }
 
@@ -1984,27 +1996,27 @@ h4.title-2 {
 h5.title-2 {
   font-size: 20px;
   color: #333;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   margin: 0px 0px 7px 85px;
 }
 
 .content {
   margin: 0px 0px 0px 85px;
   color: #999 !important;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
 }
 
 .content-2 {
   color: #999 !important;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
 }
 
 .quienes-2-title {
   color: #fff;
   font-size: 45px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
   text-shadow: 3px 3px #000;
 }
@@ -2012,7 +2024,7 @@ h5.title-2 {
 .quienes-2-heading-span {
   color: #fff;
   font-size: 45px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
   text-shadow: 3px 3px #000;
 }
@@ -2020,7 +2032,7 @@ h5.title-2 {
 .quienes-text-white {
   color: #fff;
   font-size: 20px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
 }
 
@@ -2028,7 +2040,7 @@ h5.title-2 {
   background: #d4645f;
   color: #fff;
   font-size: 18px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   padding: 50px;
 }
 
@@ -2041,7 +2053,7 @@ h5.title-2 {
 
 .quienes-body-text {
   font-size: 16px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #000;
 }
 
@@ -2206,20 +2218,20 @@ img.grey:hover {
 .metodo-top-heading {
   color: #777;
   font-size: 32px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 300;
 }
 
 h2 .metodo-sub-heading {
   color: #333;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 32px;
   margin: 20px 0px 15px;
 }
 
 .b {
   color: #eb5858;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   font-weight: bold;
 }
@@ -2242,7 +2254,7 @@ h2 .metodo-sub-heading {
 .red-small {
   font-size: 11px;
   color: #eb5858;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1;
   font-weight: 900;
 }
@@ -2250,7 +2262,7 @@ h2 .metodo-sub-heading {
 .value {
   font-size: 28px;
   color: #333;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   /* margin: 0px 0px 6px; */
 }
 
@@ -2278,7 +2290,7 @@ h2 .metodo-sub-heading {
 .custom-button-4 a {
   font-size: 12px;
   color: #fff;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.6;
   font-weight: bold;
   text-decoration: none;
@@ -2402,7 +2414,7 @@ h2 .metodo-sub-heading {
 .done {
   color: #eb5858;
   font-size: 18px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   margin: 0px 0px 60px;
   font-weight: bold;
 }
@@ -2415,14 +2427,14 @@ h2 .metodo-sub-heading {
 .red-wrapper-header {
   font-size: 24px;
   font-weight: bold;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .red-wrapper-text {
   width: 60%;
   margin: 0 auto;
   font-size: 20px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 @media (max-width: 900px) {
@@ -2432,28 +2444,28 @@ h2 .metodo-sub-heading {
 }
 
 .satisfaction {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 20px;
   margin: 0px 85px 7px 0px;
   color: #333;
 }
 
 .satisfaction-text {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #999;
   font-size: 14px;
   margin: 0px 85px 0px 0px;
 }
 
 .satisfaction-right {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 20px;
   margin: 0px 0px 7px 85px;
   color: #333;
 }
 
 .satisfaction-text-right {
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #999;
   font-size: 14px;
   margin: 0px 0px 0px 85px;
@@ -2469,6 +2481,14 @@ h2 .metodo-sub-heading {
 
 .fa-diamond {
   padding: 16.5px 15px;
+}
+
+.fa-gem {
+  padding: 16.5px 15px;
+}
+
+.fa-money-bill {
+  padding: 16.5px 13px;
 }
 
 .fa-cog {
@@ -2490,14 +2510,14 @@ i.satisfaction-icon.fa-bullhorn.bullhorn-2 {
   padding: 20px 0px;
   font-size: 20px;
   color: #333;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .aviso a {
   color: #eb5858;
   font-size: 14px;
-  font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   text-decoration: none;
 }
 
@@ -2546,7 +2566,7 @@ color: #fff!important;
 
 div.hero-text h1.title-header {
   color: #fff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   transition: none 0s ease 0s;
   text-align: inherit;
   /* line-height: 97px; */
@@ -2566,7 +2586,7 @@ div.hero-text h1.title-header {
 
 div.hero-text h2.title-subheader {
   color: #fff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   line-height: 97px;
   margin-top: -30px !important;
   font-size: 2.8vw;
@@ -2598,18 +2618,18 @@ div.hero-text h2.title-subheader {
 
 h4.section-header {
   font-size: 24px;
-  font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
   margin-top: 0;
 }
 
 h5.section-subheader {
   font-size: 20px !important;
-  font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 p.section-text {
   font-size: 16px !important;
-  font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
   text-align: left;
   font-weight: 700;
 }
@@ -2695,7 +2715,7 @@ perspective: 2%;
   float: right;
   width: 50%;
   max-height: 120px;
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -2783,7 +2803,7 @@ perspective: 2%;
   display: grid;
   align-items: start;
   grid-template-columns: 20% auto;
-  grid-template-areas: 'blogItem1 blogItem2 blogItem3 blogItem4 blogItem5';
+  grid-template-areas: "blogItem1 blogItem2 blogItem3 blogItem4 blogItem5";
   grid-gap: 10px;
   padding: 10px;
 }
@@ -2792,7 +2812,7 @@ perspective: 2%;
   .grid-container {
     grid-template-rows: minmax(481px, auto);
     grid-template-columns: 33.333% 33.333% 33.333%;
-    grid-template-areas: 'blogItem1 blogItem3 blogItem2' ' . blogItem5 . ';
+    grid-template-areas: "blogItem1 blogItem3 blogItem2" " . blogItem5 . ";
   }
   .blog-item-4 {
     display: none;
@@ -2802,14 +2822,14 @@ perspective: 2%;
 @media (max-width: 950px) {
   .grid-container {
     grid-template-columns: 50% 50%;
-    grid-template-areas: 'blogItem1 blogItem3' 'blogItem2 blogItem5';
+    grid-template-areas: "blogItem1 blogItem3" "blogItem2 blogItem5";
   }
 }
 
 @media (max-width: 650px) {
   .grid-container {
     grid-template-columns: 100%;
-    grid-template-areas: 'blogItem3' 'blogItem1' 'blogItem2' 'blogItem5';
+    grid-template-areas: "blogItem3" "blogItem1" "blogItem2" "blogItem5";
   }
 }
 
@@ -2839,7 +2859,7 @@ perspective: 2%;
 }
 
 .row2:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }

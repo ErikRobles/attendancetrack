@@ -3125,4 +3125,38 @@ perspective: 2%;
     z-index: 2000;
 }
 
+blockquote {
+    border: none;
+    margin-bottom: -30px;
+    quotes: "\f10d""\f10e";
+}
+
+blockquote h4 {
+    color: #c7e2ef;
+    font-size: 20px;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: italic;
+}
+
+blockquote h4:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f10d";
+    font-weight: bold;
+    font-size: 30px;
+    color: #c7e2ef;
+    line-height: 2.5;
+    margin-right: 10px;
+}
+
+blockquote h4:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f10e";
+    font-weight: bold;
+    font-size: 30px;
+    color: #c7e2ef;
+    margin-left: 10px;
+    line-height: 2.5;
+}
+
 /*# sourceMappingURL=style.css.map */

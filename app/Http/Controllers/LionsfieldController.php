@@ -81,4 +81,40 @@ class LionsfieldController extends Controller
     public function WinWin() {
         return view('frontend.pages.internals.win_win');
     }
+
+    public function Home1() {
+        return view('frontend.pages.internals.home1');
+    }
+
+    public function Home2() {
+        return view('frontend.pages.internals.home2');
+    }
+
+    public function Home3() {
+        return view('frontend.pages.internals.home3');
+    }
+
+    public function Home4() {
+        return view('frontend.pages.internals.home4');
+    }
+
+    public function Home5() {
+        return view('frontend.pages.internals.home5');
+    }
+
+    public function Home6() {
+        return view('frontend.pages.internals.home6');
+    }
+
+    public function Home7() {
+        return view('frontend.pages.internals.home7');
+    }
+
+    public function Home8() {
+        return view('frontend.pages.internals.home8');
+    }
+
+    public function Home9() {
+        return view('frontend.pages.internals.home9');
+    }
 }

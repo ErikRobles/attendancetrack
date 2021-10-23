@@ -17,13 +17,12 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description"
         content="Inglés de negocios para ejecutivos y empresas. Profesionales proactivos y dinámicos en la enseñanza del idioma inglés.Estamos orgullosos de proporcionar la más">
-    <link rel="canonical" href="https://lionsfield.mx">
+    <link rel="canonical" href="{{ route('home') }}">
     <!-- Bootstrap core CSS-->
 
     <link href="{{ asset('frontend/stylesheets/bootstrap.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="{{ asset('frontend/stylesheets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">    <link href="{{ asset('frontend/stylesheets/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/stylesheets/owl.theme.default.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
@@ -38,4 +37,6 @@
 div.sweet-stuff {
     display: none;
 }
+
+
 </style>

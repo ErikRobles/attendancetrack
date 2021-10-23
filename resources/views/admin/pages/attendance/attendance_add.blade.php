@@ -67,7 +67,7 @@
                       </div>
                       {{-- End Col md 5 --}}
                     
-                          
+                      
                       
                       <div class="col-md-2" style="padding-top: 25px;">
                         <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i></span>
