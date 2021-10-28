@@ -16,12 +16,12 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('student_id')->nullable();
-            $table->integer('teacher_id')->nullable();
-            $table->string('contact1')->default('No name provided')->nullable();
-            $table->string('contact2')->default('No name provided')->nullable();
-            $table->string('phone1')->default('No number provided')->nullable();
-            $table->string('phone2')->default('No number provided')->nullable();
+            $table->integer('student_id')->nullable()->onDelete('set null');
+            $table->integer('teacher_id')->nullable()->onDelete('set null');
+            $table->string('contact1')->default('No name provided')->nullable()->onDelete('set null');
+            $table->string('contact2')->default('No name provided')->nullable()->onDelete('set null');
+            $table->string('phone1')->default('No number provided')->nullable()->onDelete('set null');
+            $table->string('phone2')->default('No number provided')->nullable()->onDelete('set null');
             $table->timestamps();
         });
     }

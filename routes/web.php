@@ -10,6 +10,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ContactTwoController;
 use App\Http\Controllers\LionsfieldController;
+use App\Http\Controllers\PerformanceController;
 use App\Http\Controllers\LionsfieldTwoController;
 use App\Http\Controllers\ChangePasswordController;
 
@@ -80,8 +81,15 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/delete_contact/{id}', [ContactController::class, 'deleteContactMessage'])->name('delete_contact');
     // Frontend two Contact messages
     Route::get('admin/contact_messages/frontend_two_messages_view', [ContactTwoController::class, 'frontendTwoContactMessagesView'])->name('front_end_two_messages');
-    Route::post('/contact-form2', [ContactTwoController::class, 'storeContactForm2'])->name('contact-form2.store');
-    Route::get('/delete_contact2/{id}', [ContactTwoController::class, 'deleteContactMessage2'])->name('delete_contact2');
+    Route::post('contact-form2', [ContactTwoController::class, 'storeContactForm2'])->name('contact-form2.store');
+    Route::get('delete_contact2/{id}', [ContactTwoController::class, 'deleteContactMessage2'])->name('delete_contact2');
+    // Preformance Route
+    Route::get('admin/performance/performance_view', [PerformanceController::class, 'PerformanceView'])->name('performance');
+    Route::get('admin/performance/performance_add', [PerformanceController::class, 'PerformanceAdd'])->name('performance_add');
+    Route::post('admin/performance/store', [PerformanceController::class, 'PerformanceStore'])->name('performance_store');
+    Route::get('admin/performance/performance_edit/{id}', [PerformanceController::class, 'PerformanceEdit'])->name('performance_edit');
+    Route::post('admin/performance/performance_update/{id}', [PerformanceController::class, 'PerformanceUpdate'])->name('performance_update');
+    Route::get('admin/performance/performance_delete/{id}', [PerformanceController::class, 'PerformanceDelete'])->name('performance_delete');
 });
 
 // HomePage Lionsfield Routes Front End One

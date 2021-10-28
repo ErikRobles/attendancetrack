@@ -16,15 +16,15 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('company_id')->nullable();
-            $table->integer('level_id')->nullable();
-            $table->integer('student_id')->nullable();
+            $table->integer('company_id')->nullable()->onDelete('set null');
+            $table->integer('level_id')->nullable()->onDelete('set null');
+            $table->integer('student_id')->nullable()->onDelete('set null');
             $table->string('email')->unique();
             $table->string('role')->default('Teacher');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
+            $table->foreignId('current_team_id')->nullable()->onDelete('set null');
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });

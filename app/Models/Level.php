@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model
 {
-    use HasFactory;
+    public function student() {
+        return $this->belongsTo(Student::class, 'level_id', 'id');
+    }
 }

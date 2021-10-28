@@ -20,10 +20,12 @@ class Student extends Model
     }
 
     public function company() {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(Company::class, 'company_id', 'id');
     }
 
     public function user() {
         return $this->belongsTo(User::class);
     }
+
+       
 }

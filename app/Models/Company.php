@@ -21,5 +21,5 @@ class Company extends Model
          return $this->hasMany(Student::class, 'company_id', 'id');
      }
 
-   
+       
 }

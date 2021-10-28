@@ -16,7 +16,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Student Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Enter Company Name">
+                            <input type="text" name="name" class="form-control" placeholder="Enter Student Name">
                           </div>
                     </div><!--End col md 3-->
                     <div class="col-md-3">

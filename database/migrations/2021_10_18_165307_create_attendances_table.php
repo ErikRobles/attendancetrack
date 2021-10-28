@@ -19,7 +19,7 @@ class CreateAttendancesTable extends Migration
             $table->integer('level_id')->nullable();
             $table->integer('teacher_id')->nullable();
             $table->integer('company_id')->nullable();
-            $table->integer('student_id')->nullable();
+            $table->foreignId('student_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('attend_status')->nullable();
             $table->timestamps();
         });

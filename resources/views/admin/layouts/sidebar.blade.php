@@ -94,17 +94,33 @@
                     <p>Attendance</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="{{ route('performance') }}" class="nav-link">
+                    <i class="fas fa-chart-line nav-icon"></i>
+                    <p>Performance</p>
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
           @endif
+          @if(Auth::user()->role == 'Teacher')
           <ul class="nav nav-sidebar flex-column">
             <li class="nav-item">
               <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="nav-link">
-                <i class="fas fa-pen-square nav-icon"></i>
+                <i class="fas fa-school nav-icon"></i>
                 <p>Add Attendance</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="{{ route('performance_add') }}" class="nav-link">
+                <i class="fas fa-chart-line nav-icon"></i>
+                <p>Add Performance</p>
+              </a>
+            </li>
+          </ul>
+          @endif
+          <ul class="nav nav-sidebar flex-column">
             <li class="nav-item">
               <a href="{{ route('profile.show') }}" class="nav-link">
                 <i class="fas fa-user nav-icon"></i>

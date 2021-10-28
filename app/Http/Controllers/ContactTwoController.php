@@ -12,12 +12,20 @@ class ContactTwoController extends Controller
         return view('admin.contact_messages.frontend_two_messages_view', compact('frontendTwoMessages'));
     }
 
+    protected function formResponse2() {
+        $notification = array(
+            'message' => 'Mensaje Enviado Exisotamente',
+            'alert-type' => 'success'
+        );
+        return redirect()->to('inicio')->with($notification);
+    }
+
     public function storeContactForm2(Request $request)
     {
         if ($request->faxonly) { 
             return $this->formResponse2(); 
         } 
-        
+         
 
         $request->validate([
             'name' => 'required',
@@ -65,6 +73,6 @@ class ContactTwoController extends Controller
             'message' => 'Message Successfully Deleted',
             'alert-type' => 'success'
         );
-        return Redirect()->route('frontend_two_messages_view')->with($notification);
+        return Redirect()->route('front_end_two_messages')->with($notification);
     }
 }

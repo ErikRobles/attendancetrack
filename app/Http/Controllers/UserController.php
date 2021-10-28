@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
 {
@@ -18,6 +19,13 @@ class UserController extends Controller
     }
 
     public function StoreUsers(Request $request) { 
+        $request->validate([
+            'password' => [
+                'required',
+               Password::min(8)->letters()->numbers()->mixedCase()->symbols(),
+            ],
+        ]);
+       
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;

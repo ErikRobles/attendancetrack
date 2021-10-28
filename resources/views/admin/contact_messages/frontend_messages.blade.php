@@ -44,7 +44,12 @@
                 <td>{{ $message->mensaje }}</td>
                 <td>{{ date('d-m-Y', strtotime($message->created_at)) }}</td>  
                 <td>
-                    <a href="{{ route('delete_contact', $message->id) }}" class="btn btn-danger">Delete</a>
+                  <form action="{{ route('delete_contact', $message->id) }}">
+                  @csrf
+                  <input type="submit" class="btn btn-danger" value="Delete">
+                  </form>
+
+                    {{-- <a href="{{ route('delete_contact', $message->id) }}" class="btn btn-danger">Delete</a> --}}
                 </td>
                 
             </tr>

@@ -16,8 +16,8 @@ class CreateLevelsTable extends Migration
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('company_id')->nullable();
-            $table->integer('student_id')->nullable();
+            $table->integer('company_id')->nullable()->onDelete('set null');
+            $table->integer('student_id')->nullable()->onDelete('set null');
             $table->timestamps();
         });
     }

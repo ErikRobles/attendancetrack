@@ -38,7 +38,6 @@ class AttendanceController extends Controller
                 $attend->date = $request->date;
                 $attend->student_id = $request->student_id[$i];
                 $attend->attend_status = $request->attend_status[$i];
-                // $attend->company_id = $request->company_id;
                 $attend->save();
             }
         } 

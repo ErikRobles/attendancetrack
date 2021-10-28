@@ -11,7 +11,11 @@ class ContactController extends Controller
 {
 
     protected function formResponse() {
-        return redirect()->route('contacto')->with(['success' => 'Contact Form Submit Successfully']);
+        $notification = array(
+            'message' => 'Mensaje Enviado Exisotamente',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('contacto')->with($notification);
     }
 
     public function storeContactForm(Request $request)
