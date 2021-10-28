@@ -90,6 +90,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/performance/performance_edit/{id}', [PerformanceController::class, 'PerformanceEdit'])->name('performance_edit');
     Route::post('admin/performance/performance_update/{id}', [PerformanceController::class, 'PerformanceUpdate'])->name('performance_update');
     Route::get('admin/performance/performance_delete/{id}', [PerformanceController::class, 'PerformanceDelete'])->name('performance_delete');
+    // Quiz Routes All
+    Route::get('admin/quiz/quizquestions/quizquestion_add', [QuestionController::class, 'QuizQuestionAdd'])->name('quizquestion_add');
 });
 
 // HomePage Lionsfield Routes Front End One

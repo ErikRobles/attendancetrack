@@ -21,8 +21,6 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -58,52 +56,104 @@
                   <p>Students</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="{{ route('front_end_messages') }}" class="nav-link">
-                  <i class="fas fa-envelope nav-icon"></i>
-                  <p>Front End Messages</p>
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-envelope"></i>
+                  <p>
+                    Messages
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('front_end_messages') }}" class="nav-link">
+                      <i class="fas fa-envelope nav-icon"></i>
+                      <p>Front End Messages</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('front_end_two_messages') }}" class="nav-link">
+                      <i class="fas fa-envelope-open-text nav-icon"></i>
+                      <p>Front End Two Messages</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
+
               <li class="nav-item">
-                <a href="{{ route('front_end_two_messages') }}" class="nav-link">
-                  <i class="fas fa-envelope-open-text nav-icon"></i>
-                  <p>Front End Two Messages</p>
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-brain"></i>
+                  <p>
+                    Quizzes
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('front_end_messages') }}" class="nav-link">
+                      <i class="fas fa-eye nav-icon"></i>
+                      <p>Quiz View</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('front_end_messages') }}" class="nav-link">
+                      <i class="fas fa-eye nav-icon"></i>
+                      <p>Category View</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('front_end_messages') }}" class="nav-link">
+                      <i class="fas fa-eye nav-icon"></i>
+                      <p>Question View</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('front_end_two_messages') }}" class="nav-link">
+                      <i class="fas fa-list nav-icon"></i>
+                      <p>Add Quiz Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('front_end_two_messages') }}" class="nav-link">
+                      <i class="fas fa-question nav-icon"></i>
+                      <p>Add Quiz Question</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Reports
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('admin.pages.attendance.report_view') }}" class="nav-link">
+                      <i class="fas fa-clipboard-list nav-icon"></i>
+                      <p>Attendance</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('performance') }}" class="nav-link">
+                      <i class="fas fa-chart-line nav-icon"></i>
+                      <p>Performance</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
               @endif
             </ul>
           </li>
         </ul>
-        @if(Auth::user()->role == 'Admin')
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library -->
-            <li class="nav-item menu-open">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Reports
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-               
-                <li class="nav-item">
-                  <a href="{{ route('admin.pages.attendance.report_view') }}" class="nav-link">
-                    <i class="fas fa-clipboard-list nav-icon"></i>
-                    <p>Attendance</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ route('performance') }}" class="nav-link">
-                    <i class="fas fa-chart-line nav-icon"></i>
-                    <p>Performance</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          @endif
+      </nav>
+     
+         
+        <nav class="mt-2">
           @if(Auth::user()->role == 'Teacher')
           <ul class="nav nav-sidebar flex-column">
             <li class="nav-item">
@@ -120,6 +170,7 @@
             </li>
           </ul>
           @endif
+        </nav>
           <ul class="nav nav-sidebar flex-column">
             <li class="nav-item">
               <a href="{{ route('profile.show') }}" class="nav-link">
@@ -140,8 +191,6 @@
               </a>
             </li>
           </ul>
-  
-      </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

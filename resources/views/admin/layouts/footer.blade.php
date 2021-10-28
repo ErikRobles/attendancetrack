@@ -5,7 +5,11 @@
       {{-- Some text here --}}
     </div>
   </footer>
-
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 
 <!-- jQuery -->
 <script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
