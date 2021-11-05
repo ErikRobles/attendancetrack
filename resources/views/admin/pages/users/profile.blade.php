@@ -1,6 +1,6 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Profile')
 @section('admin')
-
 @endsection<x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
         {{ __('Profile Information') }}

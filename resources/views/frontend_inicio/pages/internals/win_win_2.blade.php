@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | Win Win')
 @section('frontend_two')
 <div class="container breathe"><img class="pt-5 image-fluid" src="{{ ('frontend/assets/img/post5.jpg') }}">
     <h1 class="pt-3">Win All or Win-Win?</h1>

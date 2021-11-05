@@ -19,6 +19,12 @@ class CreateStudentsTable extends Migration
             $table->integer('company_id')->nullable();
             $table->integer('level_id')->nullable();
             $table->integer('teacher_id')->comment('Teacher_id=User_id')->nullable();
+            $table->string('category')->nullable();
+            $table->string('email')->nullable();
+            $table->string('exam')->nullable();
+            $table->string('password')->nullable();
+            $table->string('role_as')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

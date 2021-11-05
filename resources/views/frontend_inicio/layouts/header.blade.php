@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/scss/style.css') }}">
     <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
 
-    <title>Lionsfield | Clases de inglés de Negocios en vivo</title>
+    <title>@yield('title')</title>
 </head>
 <style>
     div.sweet-stuff {

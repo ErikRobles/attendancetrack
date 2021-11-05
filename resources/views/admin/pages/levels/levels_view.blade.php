@@ -1,4 +1,5 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Levels')
 @section('admin')
 <div class="content-wrapper p-3">
 <h1>All Levels</h1>

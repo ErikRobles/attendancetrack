@@ -1,4 +1,5 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Attendance')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -27,7 +28,7 @@
                 <th>Attend Status</th>
                 <th>Action</th>
               </tr>
-            </thead>
+            </thead> 
             <tbody>
                 @foreach($allData as $attendance)
               <tr>

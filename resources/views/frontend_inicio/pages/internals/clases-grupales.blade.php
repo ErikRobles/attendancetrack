@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | Clase Grupal')
 @section('frontend_two')
 <div class="spacerdiv mt-5 mb-5 pt-2"></div>
 <div class="container mt-5 d-flex justify-content-center">

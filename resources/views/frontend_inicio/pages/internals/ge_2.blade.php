@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | GE')
 @section('frontend_two')
 <div class="container">
     <div class="col-wrapper breathe">

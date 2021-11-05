@@ -39,11 +39,13 @@
               <i class="fas fa-expand-arrows-alt"></i>
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="{{ route('profile.show') }}" class="nav-link">
               <img class="h-8 w-8 rounded-full object-cover" style="width: 25px; border-radius: 50%;" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
             </a>
           </li>
+      
         </ul>
       </nav>
       <!-- /.navbar -->

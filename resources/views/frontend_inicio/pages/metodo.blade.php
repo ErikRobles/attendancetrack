@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | Metodo')
 @section('frontend_two')
 <div class="jumbotron metodo img-fluid" id="jumbotron">
     <div class="container color-change">

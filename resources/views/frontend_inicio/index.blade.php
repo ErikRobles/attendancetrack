@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | Clases de inglés de Negocios en vivo')
 @section('frontend_two')
 <div class="jumbotron inicio">
     <div class="container color-change">

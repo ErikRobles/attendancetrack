@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionCategoriesTable extends Migration
+class CreateOexExamMastersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateQuestionCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('question_categories', function (Blueprint $table) {
+        Schema::create('oex_exam_masters', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('level_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->string('title')->nullable();
+            $table->string('category')->nullable();
+            $table->string('exam_date')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateQuestionCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question_categories');
+        Schema::dropIfExists('oex_exam_masters');
     }
 }

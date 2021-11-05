@@ -1,4 +1,5 @@
 @extends('frontend.frontend_master')
+@section('title', 'Lionsfield | Mergers')
 @section('frontend')
 <div class="container breathe">
     <h1 class="pt-3">Mergers and Acquisitions Word Search</h1>

@@ -1,4 +1,5 @@
 @extends('frontend.frontend_master')
+@section('title', 'Lionsfield | How the Brain works')
 @section('frontend')
 <div class="container breathe">
     <h1 class="pt-3">How the Brain Learns…</h1>

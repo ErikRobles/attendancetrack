@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | Cancelar Pago')
 @section('frontend_two')
 <div class="spacerdiv mt-5 mb-5 pt-2">
     <div class="extra-space" style="padding: 50px;"></div>

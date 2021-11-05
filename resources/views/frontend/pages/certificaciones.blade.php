@@ -1,4 +1,5 @@
 @extends('frontend.frontend_master')
+@section('title', 'Lionsfield | Certificaciónes')
 @section('frontend')
 <div class="jumbotron certificate img-fluid">
     <div class="container color-change">

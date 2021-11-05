@@ -63,7 +63,28 @@ class User extends Authenticatable
         return $this->hasMany(Student::class, 'teacher_id', 'id');
     }
 
+    public function teacher() {
+        return $this->hasMany(QuestionCategory::class);
+    }
+
     // public function getCompanyTeacherRelation() {
     //     return $this->belongsTo(Company::class, 'company_teachers', 'teacher_id', 'company_id');
     // }
+
+    public function getLevelRelation() {
+        return $this->belongsTo(Level::class, 'level_id', 'id');
+    }
+
+    public function getCompanyRelation() {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
+    public function oexExams() {
+        return $this->belongsTo(Oex_exam_master::class, 'exam', 'id');
+    }
+
+    public function getTeacherRelation() {
+        return $this->belongsTo(User::class, 'teacher_id', 'id');
+    }
+
 }

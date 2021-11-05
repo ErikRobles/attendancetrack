@@ -1,4 +1,5 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Add User')
 @section('admin')
 <div class="content-wrapper p-3">
     <div class="col-md-12">
@@ -40,9 +41,63 @@
                                 <option value="">Please Select Role</option>
                                 <option value="Admin">Admin</option>
                                 <option value="Teacher">Teacher</option>
+                                <option value="Student">Student</option>
                             </select>
                           </div>
                 </div><!--End Row-->
+
+                <div class="col-md-12">
+                  <h4>Student Info Section <small style="font-size: 14px;">(Leave blank if user is not a student)</small> </h4>
+                  <hr>
+                </div>
+               <!-- Student Info-->
+               <div class="col-md-3">
+                <div class="form-group">
+                    <label for="company">Student's Company</label>
+                    <select name="company_id" id="" class="form-select form-control" required>
+                        <option value="">Select Company Name</option>
+                        @foreach($companies as $company)
+                        <option value="{{ $company->id }}" value="{{ old('company_id') }}">{{ $company->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div><!--End col md 3-->
+
+            <div class="col-md-3">
+              <div class="form-group">
+                  <label for="exampleInputPassword1">Student's Level</label>
+                  <select name="level_id" id="" class="form-select form-control">
+                      <option value="">Select Student Level</option>
+                      @foreach($levels as $level)
+                      <option value="{{ $level->id }}" value="{{ old('level_id') }}">{{ $level->name }}</option>
+                      @endforeach
+                  </select>
+                </div>
+          </div><!--End col md 3-->
+
+          <div class="col-md-3">
+            <div class="form-group">
+                <label for="exampleInputPassword1">Student's Teacher</label>
+                <select name="teacher_id" id=""  class="form-select form-control">
+                    <option value="">Select Teacher</option>
+                    @foreach($allData as $teacher)
+                    <option value="{{ $teacher->id }}" value="{{ old('teacher_id') }}">{{ $teacher->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-group">
+              <label for="exam">Select Exam</label>
+              <select name="exam" id=""  class="form-select form-control">
+                  <option value="0">Select Exam</option>
+                  @foreach($exams as $exam)
+                  <option value="{{ $exam['id'] }}" value="{{ old('exam') }}">{{ $exam['title'] }}</option>
+                  @endforeach
+              </select>
+          </div>
+      </div>
 
             </div>
             <!-- /.card-body -->

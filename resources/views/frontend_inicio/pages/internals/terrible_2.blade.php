@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | Terrible')
 @section('frontend_two')
 <img class="pt-5 image-fluid" src="{{ ('frontend/assets/img/christmas.png') }}">
 <h1 class="pt-3">Terrible Terrific…</h1>

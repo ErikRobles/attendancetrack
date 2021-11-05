@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Oex_exam_master;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Student extends Model
 {
@@ -25,6 +26,10 @@ class Student extends Model
 
     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+    public function oexExams() {
+        return $this->belongsTo(Oex_exam_master::class, 'exam', 'id');
     }
 
        

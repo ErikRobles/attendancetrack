@@ -1,4 +1,5 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Edit Attendance')
 @section('admin')
 
 <div class="content-wrapper p-3">

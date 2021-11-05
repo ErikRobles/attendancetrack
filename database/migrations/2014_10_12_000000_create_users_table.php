@@ -12,15 +12,18 @@ class CreateUsersTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {  
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->integer('company_id')->nullable()->onDelete('set null');
             $table->integer('level_id')->nullable()->onDelete('set null');
             $table->integer('student_id')->nullable()->onDelete('set null');
+            $table->integer('teacher_id')->comment('Teacher_id=User_id')->nullable();
             $table->string('email')->unique();
-            $table->string('role')->default('Teacher');
+            $table->string('role')->default('Student');
+            $table->string('status')->nullable();
+            $table->string('exam')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

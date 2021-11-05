@@ -1,4 +1,5 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Add Attendance Record')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -31,7 +32,7 @@
                     </div><!--End col md 12-->
                 </div><!--end row-->
                 <div class="add_item">
-
+ 
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">

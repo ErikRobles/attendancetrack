@@ -3,16 +3,21 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\PortalController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ContactTwoController;
 use App\Http\Controllers\LionsfieldController;
 use App\Http\Controllers\PerformanceController;
 use App\Http\Controllers\LionsfieldTwoController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\PortalOperationController;
+use App\Http\Controllers\QuestionCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +37,12 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
+ 
 Route::group(['middleware' => 'auth'], function() { 
     Route::get('redirects', 'App\Http\Controllers\HomeController@index');
     Route::get('logout', [HomeController::class, 'Logout'])->name('logout');
     Route::get('admin/dashboard', [HomeController::class, 'AdminDashboard'])->name('admin.dashboard');
+    Route::get('portal/dashboard', [PortalOperationController::class, 'dashboard'])->name('portal.dashboard');
     Route::get('change/password', [ChangePasswordController::class, 'ChangePassword'])->name('change.password');
     Route::post('password/update', [ChangePasswordController::class, 'UpdatePassword'])->name('password.update');
     // User routes
@@ -65,8 +71,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/pages/students/students_add', [StudentController::class, 'StudentAdd'])->name('admin.pages.students.add');
     Route::post('admin/pages/students/students_store', [StudentController::class, 'StudentStore'])->name('admin.pages.students.store');
     Route::get('admin/pages/students/students_edit/{id}', [StudentController::class, 'StudentEdit'])->name('admin.pages.students.edit');
-    Route::post('admin/pages/students/students_updatet/{id}', [StudentController::class, 'StudentUpdate'])->name('admin.pages.students.update');
+    Route::post('admin/pages/students/students_update/{id}', [StudentController::class, 'StudentUpdate'])->name('admin.pages.students.update');
     Route::get('admin/pages/students/students_delete/{id}', [StudentController::class, 'StudentDelete'])->name('admin.pages.students.delete');
+    Route::get('exams/admin/student_status/{id}', [StudentController::class, 'student_status'])->name('student_status');
+
     //Attendance Reports Routes
     Route::get('admin/pages/attendance/report_view', [AttendanceController::class, 'AttendanceReportView'])->name('admin.pages.attendance.report_view');
     // Attendance Teacher Reporting Routes
@@ -90,9 +98,52 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/performance/performance_edit/{id}', [PerformanceController::class, 'PerformanceEdit'])->name('performance_edit');
     Route::post('admin/performance/performance_update/{id}', [PerformanceController::class, 'PerformanceUpdate'])->name('performance_update');
     Route::get('admin/performance/performance_delete/{id}', [PerformanceController::class, 'PerformanceDelete'])->name('performance_delete');
-    // Quiz Routes All
-    Route::get('admin/quiz/quizquestions/quizquestion_add', [QuestionController::class, 'QuizQuestionAdd'])->name('quizquestion_add');
+    // Exam Routes
+    // Exam Categories
+    Route::get('exams/admin/exam_category', [AdminController::class, 'exam_category'])->name('exam_category');
+    Route::post('/exams/admin/add_new_category', [AdminController::class, 'add_new_category'])->name('add_new_category');
+    Route::get('exams/admin/edit_category/{id}', [AdminController::class, 'edit_category'])->name('edit_category');
+    Route::post('exams/admin/update_category/{id}', [AdminController::class, 'update_category'])->name('update_category');
+    Route::get('exams/admin/delete_category/{id}', [AdminController::class, 'delete_category'])->name('delete_category');
+    Route::get('exams/admin/category_status/{id}', [AdminController::class, 'category_status'])->name('category_status');
+    // Exams
+    Route::get('exams/admin/manage_exam', [AdminController::class, 'manage_exam'])->name('manage_exam');
+    Route::post('exams/admin/add_new_exam', [AdminController::class, 'add_new_exam'])->name('add_new_exam');
+    Route::get('exams/admin/exam_status/{id}', [AdminController::class, 'exam_status'])->name('exam_status');
+    Route::get('exams/admin/delete_exam/{id}', [AdminController::class, 'delete_exam'])->name('delete_exam');
+    Route::get('exams/admin/edit_exam/{id}', [AdminController::class, 'edit_exam'])->name('edit_exam');
+    Route::post('exams/admin/edit_exam_sub', [AdminController::class, 'edit_exam_sub'])->name('edit_exam_sub');
+    // Exam Questions
+    Route::get('exams/admin/add_question/{id}', [AdminController::class, 'add_question'])->name('add_question'); 
+    Route::post('exams/admin/add_new_question', [AdminController::class, 'add_new_question'])->name('add_new_question');
+    Route::get('exams/admin/question_status/{id}', [AdminController::class, 'question_status'])->name('question_status');
+    Route::get('exams/admin/delete_question/{id}', [AdminController::class, 'delete_question'])->name('delete_question');
+    Route::get('exams/admin/update_question/{id}',[AdminController::class, 'update_question'])->name('update_question'); 
+    Route::post('exams/admin/edit_question_inner', [AdminController::class, 'edit_question_inner'])->name('edit_question_inner');
+   // Portal Routes
+   Route::get('exams/admin/manage_portal', [AdminController::class, 'manage_portal'])->name('manage_portal');
+   Route::post('exams/admin/add_new_portal', [AdminController::class, 'add_new_portal'])->name('add_new_portal');
+   Route::get('exams/admin/portal_status/{id}', [AdminController::class, 'portal_status'])->name('portal_status');
+   Route::get('exams/admin/edit_portal/{id}', [AdminController::class, 'edit_portal'])->name('edit_portal');
+   Route::get('exams/admin/edit_portal_sub', [AdminController::class, 'edit_portal_sub'])->name('edit_portal_sub');
+   Route::get('exams/admin/delete_portal/{id}', [AdminController::class, 'delete_portal'])->name('delete_portal');
+    // Exam Results
+   Route::get('admin/student_exam_result/{id}', [AdminController::class, 'student_exam_result'])->name('student_exam_result');
+  
+// Portal routes
+  Route::get('portal/exam_form/{id}', [PortalOperationController::class, 'exam_form'])->name('exam_form');
+  Route::post('portal/exam_form_sub', [PortalOperationController::class, 'exam_form_sub'])->name('exam_form_sub');
+  Route::get('portal/print/{id}', [PortalOperationController::class, 'print'])->name('print');
+  Route::get('portal/update_form', [PortalOperationController::class, 'update_form'])->name('update_form');
+  Route::get('portal/student_exam_info', [PortalOperationController::class, 'student_exam_info'])->name('student_exam_info');
+  Route::post('portal/student_exam_info_edit', [PortalOperationController::class, 'student_exam_info_edit'])->name('student_exam_info_edit');
+  Route::get('portal/logout', [PortalOperationController::class, 'logout'])->name('logout');
+  Route::get('portal/student_progress_form', ['uses' => 'PortalOperationController@create']);
+  Route::post('portal/prog_form_sub', [PortalOperationController::class, 'prog_form_sub'])->name('prog_form_sub');
 });
+Route::get('portal/login', [PortalController::class, 'login'])->name('portal.login');
+Route::post('portal/login_sub', [PortalController::class, 'login_sub'])->name('login_sub');
+
 
 // HomePage Lionsfield Routes Front End One
     Route::get('home', [LionsfieldController::class, 'Home'])->name('home');
@@ -130,7 +181,7 @@ Route::group(['middleware' => 'auth'], function() {
     // Contact routes
     Route::get('frontend/contact/contacts', [ContactController::class, 'ContactMessages'])->name('contacts');
 
-
+///////////////////////////////////////////////////////////////////////////////////////
 // HomePage Lionsfield Routes Front End Two
     Route::get('inicio', [LionsfieldTwoController::class, 'Inicio'])->name('inicio');
     Route::get('frontend_inicio/pages/about_us', [LionsfieldTwoController::class, 'AboutUs'])->name('about_us');
@@ -155,9 +206,26 @@ Route::group(['middleware' => 'auth'], function() {
     // Sales Pages
     Route::get('clases-grupales', [LionsfieldTwoController::class, 'ClasesGrupales'])->name('clases-grupales');
     Route::get('clases-individuales', [LionsfieldTwoController::class, 'ClasesIndividuales'])->name('clases-individuales');
-    Route::get('clase-_premier', [LionsfieldTwoController::class, 'ClasePremier'])->name('clase-premier');
+    Route::get('clase-premier', [LionsfieldTwoController::class, 'ClasePremier'])->name('clase-premier');
     // Paypal Pages
     Route::get('payment-cancel-2', [LionsfieldTwoController::class, 'PaymentCancelTwo'])->name('payment-cancel-2');
     Route::get('success-confirmation-two', [LionsfieldTwoController::class, 'SuccessConfirmationTwo'])->name('success-confirmation-two');
+
+   /////////////////////////////
+   // Portal Routes
+ 
+
+   
+// Student Section
+Route::get('student/signup', 'StudentController@signup');
+Route::post('student/login_sub', 'StudentController@login');
+Route::get('student/dashboard', 'StudentOperationController@dashboard');
+Route::get('student/logout', 'StudentOperationController@logout');
+Route::get('student/exam', 'StudentOperationController@exam');
+Route::get('student/take_exam/{id}', 'StudentOperationController@take_exam');
+Route::post('student/submit_question', 'StudentOperationController@submit_question');
+Route::get('student/show_result/{id}', 'StudentOperationController@show_result');
+
+
 
 

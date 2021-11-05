@@ -1,4 +1,5 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Admin')
 @section('admin')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -98,10 +99,63 @@
 
     @if(Auth::user()->role == 'Teacher')
     <!-- Main content -->
-    <div class="p-5 bg-primary">
-      <h3>Welcome!<br> Please Click the Add Attendance button  <i class="fas fa-pen-square nav-icon"></i><br> in the sidebar menu to add a record.</h3>
-    </div>
+     <!-- Content Wrapper. Contains page content -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+          @foreach($portal_exams as $key => $exam)
+          <?php
+          $val=$key+1;
+          if(strtotime(date('Y-m-d'))> strtotime($exam['exam_date'])){
+              $cls = "bg-danger";
+          } else {
+              if($val%2==0) {
+                  $cls = "bg-info";
+              } else {
+                  $cls = "bg-success";
+              }
+          }
+          ?>
+          <div class="col-lg-6 col-6">
+              <!-- small box -->
+          <div class="small-box {{ $cls }}">
+            <div class="inner">
+              <h4>{{ $exam['title'] }}</h4>
+
+            <p>{{ $exam['cat_name'] }}</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-list-alt"></i>
+            </div>
+            @if(strtotime(date('Y-m-d')) < strtotime($exam['exam_date']))
+            <a href="{{ route('admin.pages.users.user_add') }}" class="small-box-footer">Add Student <i class="fas fa-arrow-circle-right"></i></a>
+            @endif 
+          </div>
+      </div>
+      <!-- ./col -->
+          @endforeach
+
+
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+
+      <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+
+<!-- /.content-wrapper -->
       <!-- Main content -->
+    @endif
+
+    @if(Auth::user()->role == 'Student')
+    <div class="p-5 bg-info">
+      <h3>Student Section</h3>
+    </div>
     @endif
   </div>
 @endsection

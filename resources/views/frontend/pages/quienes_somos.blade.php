@@ -1,4 +1,5 @@
 @extends('frontend.frontend_master')
+@section('title', 'Lionsfield | Quienes Somos')
 @section('frontend')
 <div class="jumbotron quienes img-fluid">
     <div class="container color-change">

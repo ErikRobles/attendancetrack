@@ -20,6 +20,7 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
+        @if(Auth::user()->role == 'Admin')
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
@@ -31,7 +32,7 @@
             </a>
             <ul class="nav nav-treeview">
               
-              @if(Auth::user()->role == 'Admin')
+              
               <li class="nav-item">
                 <a href="{{ route('admin.pages.users.users_view') }}" class="nav-link">
                   <i class="fas fa-users nav-icon"></i>
@@ -85,43 +86,50 @@
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-brain"></i>
                   <p>
-                    Quizzes
+                    Exams
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ route('front_end_messages') }}" class="nav-link">
-                      <i class="fas fa-eye nav-icon"></i>
-                      <p>Quiz View</p>
+                    <a href="{{ route('exam_category') }}" class="nav-link">
+                      <i class="fas fa-boxes nav-icon"></i>
+                      <p>Exam Categories</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('front_end_messages') }}" class="nav-link">
-                      <i class="fas fa-eye nav-icon"></i>
-                      <p>Category View</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ route('front_end_messages') }}" class="nav-link">
-                      <i class="fas fa-eye nav-icon"></i>
-                      <p>Question View</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ route('front_end_two_messages') }}" class="nav-link">
-                      <i class="fas fa-list nav-icon"></i>
-                      <p>Add Quiz Category</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ route('front_end_two_messages') }}" class="nav-link">
+                    <a href="{{ route('manage_exam') }}" class="nav-link">
                       <i class="fas fa-question nav-icon"></i>
-                      <p>Add Quiz Question</p>
+                      <p>Manage Exams</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('admin.pages.students.view') }}" class="nav-link">
+                      <i class="fas fa-users nav-icon"></i>
+                      <p>Manage Students</p>
                     </a>
                   </li>
                 </ul>
               </li>
+
+              {{-- <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-dungeon"></i>
+                  <p>
+                    Portal
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('manage_portal') }}" class="nav-link">
+                      <i class="fas fa-door-open nav-icon"></i>
+                      <p> Manage Portal</p>
+                    </a>
+                  </li>
+                </ul>
+              </li> --}}
+
 
               <li class="nav-item">
                 <a href="#" class="nav-link active">
@@ -152,9 +160,105 @@
         </ul>
       </nav>
      
+      @if(Auth::user()->role == "Teacher")
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-brain"></i>
+                  <p>
+                    Exams
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('exam_category') }}" class="nav-link">
+                      <i class="fas fa-boxes nav-icon"></i>
+                      <p>Exam Categories</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage_exam') }}" class="nav-link">
+                      <i class="fas fa-question nav-icon"></i>
+                      <p>Manage Exams</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('admin.pages.students.view') }}" class="nav-link">
+                      <i class="fas fa-users nav-icon"></i>
+                      <p>Manage Students</p>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-sidebar flex-column">
+                  <li class="nav-item">
+                    <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="nav-link">
+                      <i class="fas fa-school nav-icon"></i>
+                      <p>Add Attendance</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('performance_add') }}" class="nav-link">
+                      <i class="fas fa-chart-line nav-icon"></i>
+                      <p>Add Performance</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              
+
+
+              
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      @endif
          
-        <nav class="mt-2">
+        {{-- <nav class="mt-2">
           @if(Auth::user()->role == 'Teacher')
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-brain"></i>
+                <p>
+                  Exams
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('exam_category') }}" class="nav-link">
+                    <i class="fas fa-boxes nav-icon"></i>
+                    <p>Exam Categories</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('manage_exam') }}" class="nav-link">
+                    <i class="fas fa-question nav-icon"></i>
+                    <p>Manage Exams</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('admin.pages.students.view') }}" class="nav-link">
+                    <i class="fas fa-users nav-icon"></i>
+                    <p>Manage Students</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
           <ul class="nav nav-sidebar flex-column">
             <li class="nav-item">
               <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="nav-link">
@@ -169,8 +273,9 @@
               </a>
             </li>
           </ul>
+         
           @endif
-        </nav>
+        </nav> --}}
           <ul class="nav nav-sidebar flex-column">
             <li class="nav-item">
               <a href="{{ route('profile.show') }}" class="nav-link">

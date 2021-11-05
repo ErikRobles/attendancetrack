@@ -1,4 +1,5 @@
 @extends('frontend_inicio.inicio_master')
+@section('title', 'Lionsfield | Aviso de Privacidad')
 @section('frontend_two')
 <div class="container pt-5">
     <div class="privacy-wrapper">

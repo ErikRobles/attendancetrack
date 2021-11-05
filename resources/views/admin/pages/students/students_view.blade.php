@@ -1,13 +1,14 @@
 @extends('admin.admin_master')
+@section('title', 'Lionsfield | Students')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<div class="content-wrapper p-3">
+<div class="content-wrapper p-3"> 
 <h1>All Students</h1>
 <div class="row">
     <div class="col-12">
-        <a href="{{ route('admin.pages.students.add') }}" class="btn btn-success btn-rounded mb-3">Add Student</a>
-      <div class="card">
+        <a href="{{ route('admin.pages.users.user_add') }}" class="btn btn-success btn-rounded mb-3">Add Student</a>
+      <div class="card p-3">
         <div class="card-header">
           <h3 class="card-title">All Registered Students</h3>
 
@@ -28,27 +29,47 @@
           <table class="table table-hover text-nowrap" id="studentTable">
             <thead>
               <tr>
-                <th>ID</th>
                 <th>Student Name</th>
                 <th>Student's Company</th>
                 <th>Student's Level</th>
                 <th>Student's Teacher</th>
-                <th>Created At</th>
+                <th>Student's Email</th>
+                <th>Current Registered Exam</th>
+                <th>Exam Result</th>
+                <th>Status</th>
+                {{-- <th>Created At</th> --}}
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
                 @foreach($allData as $student)
               <tr>
-                <td>{{ $student->id }}</td>
                 <td>{{ $student->name }}</td>
-                <td>{{ $student['getCompanyRelation']['name']}}</td>
-                <td>{{ $student['getLevelRelation']['name'] }}</td>
-                <td>{{ $student['getTeacherRelation']['name'] }}</td>
-                <td>{{ date('m-d-Y', strtotime($student->created_at)) }}</td>
+                <td>{{ ($student->company_id !=Null) ? $student['getCompanyRelation']['name'] : "No Registered Company Listed"}}</td>
+                <td>{{ ($student->level_id !=Null) ? $student['getLevelRelation']['name'] : "No Level Listed" }}</td>
+                <td>{{ ($student->teacher_id !=Null) ? $student['getTeacherRelation']['name'] : "No Teacher Listed" }}</td>
+                <td>{{ $student->email }}</td>
+                <td>{{ ($student->exam !=Null) ? $student['oexExams']['title'] : "Not yet Assigned" }}</td>
+                <td>N/A</td>
+                @if($student['status']== 1)
+                <td><input data-id="{{ $student['id'] }}" class="student_status" type="checkbox" name="status" checked></td>
+                 @else
+                 <td><input data-id="{{ $student['id'] }}" class="student_status" type="checkbox" name="status"></td>
+                 @endif
+                {{-- <td>{{ date('m-d-Y', strtotime($student->created_at)) }}</td> --}}
                 <td>
-                    <a href="{{ route('admin.pages.students.edit', $student->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('admin.pages.students.delete', $student->id) }}" class="btn btn-danger">Delete</a>
+                  <div style="display: flex; flex-direction: row;">
+                    <form action="{{ route('admin.pages.students.edit', $student->id) }}" method="get">
+                      <button class="d-inline-block btn btn-primary btn-sm mr-1"  type="submit" value="">
+                        <i class="fas fa-pencil-alt"></i>
+                      </button>
+                    </form>
+                    <form action="{{ route('admin.pages.students.delete', $student->id) }}" method="get">
+                      <button class="d-inline-block btn btn-danger btn-sm" value="Delete" type="submit" style="display: inline;">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </form>
+                  </div>
                 </td>
               </tr>
               @endforeach

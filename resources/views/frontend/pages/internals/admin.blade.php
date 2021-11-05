@@ -1,4 +1,5 @@
 @extends('frontend.frontend_master')
+@section('title', 'Lionsfield | Inglés de Negocios para Ejecutivos y Empresas')
 @section('frontend')
 <div class="container">
     <div class="col-wrapper breathe">
