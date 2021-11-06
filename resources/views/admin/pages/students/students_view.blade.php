@@ -25,8 +25,8 @@
           </div>
         </div> 
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0">
-          <table class="table table-hover text-nowrap" id="studentTable">
+        <div class="card-body table-responsive">
+          <table class="table table-hover text-nowrap p-1" id="studentTable">
             <thead>
               <tr>
                 <th>Student Name</th>
@@ -50,7 +50,7 @@
                 <td>{{ ($student->teacher_id !=Null) ? $student['getTeacherRelation']['name'] : "No Teacher Listed" }}</td>
                 <td>{{ $student->email }}</td>
                 <td>{{ ($student->exam !=Null) ? $student['oexExams']['title'] : "Not yet Assigned" }}</td>
-                <td>N/A</td>
+                <td>{{ (isset($student['resultRelation']['result'])) ? $student['resultRelation']['result'] . "%" : "Not yet available" }}</td>
                 @if($student['status']== 1)
                 <td><input data-id="{{ $student['id'] }}" class="student_status" type="checkbox" name="status" checked></td>
                  @else

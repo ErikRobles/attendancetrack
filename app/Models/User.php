@@ -87,4 +87,8 @@ class User extends Authenticatable
         return $this->belongsTo(User::class, 'teacher_id', 'id');
     }
 
+    public function resultRelation() {
+        return $this->belongsTo(Oex_result::class, 'id', 'user_id');
+    }
+
 }

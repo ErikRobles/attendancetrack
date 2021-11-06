@@ -1,6 +1,6 @@
 <?php
 
-namespace App\model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,4 +15,6 @@ class Oex_result extends Model
         'no_ans',
         'result_json'
     ];
+
+    
 }

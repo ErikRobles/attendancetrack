@@ -20,4 +20,8 @@ class Oex_exam_master extends Model
     public function studentRelation() {
         return $this->belongsTo(Student::class, 'id', 'exam');
     }
+
+    public function examRelation() {
+        return $this->belongsTo(User::class, 'id', 'exam');
+    }
 }

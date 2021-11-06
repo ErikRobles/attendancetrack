@@ -153,9 +153,20 @@
     @endif
 
     @if(Auth::user()->role == 'Student')
-    <div class="p-5 bg-info">
-      <h3>Student Section</h3>
-    </div>
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+
+            <h4>To begin your exam, please click on "Exams" in the side menu.</h4>
+
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
     @endif
   </div>
 @endsection

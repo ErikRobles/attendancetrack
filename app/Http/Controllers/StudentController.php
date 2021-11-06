@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Level;
 use App\Models\Company;
 use App\Models\Student;
+use App\Models\Oex_result;
 use Illuminate\Http\Request;
 use App\Models\Oex_exam_master;
 use Illuminate\Support\Facades\Hash;
@@ -20,10 +21,9 @@ class StudentController extends Controller
         // dd($columns);
         $data['examData'] = Oex_exam_master::where('oex_exam_masters.id', 'students.exam')->get();
        
-        $data['allData'] = User::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation', 'oexExams')->where('role', 'Student')->orderBy('company_id', 'DESC')->get();
-        
-        $data['student_list'] = User::select('id','name','email', 'role')->get();
-            
+        $data['allData'] = User::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation', 'oexExams')->where('role', 'Student')->with('resultRelation')->orderBy('company_id', 'DESC')->get();
+        // dd($data['allData']);
+        $data['student_list'] = User::select('id','name','email', 'role')->get();   
 
         return view('admin.pages.students.students_view', $data);
     }

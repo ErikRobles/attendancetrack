@@ -18,6 +18,7 @@ use App\Http\Controllers\LionsfieldTwoController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\PortalOperationController;
 use App\Http\Controllers\QuestionCategoryController;
+use App\Http\Controllers\StudentOperationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,6 +141,12 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('portal/logout', [PortalOperationController::class, 'logout'])->name('logout');
   Route::get('portal/student_progress_form', ['uses' => 'PortalOperationController@create']);
   Route::post('portal/prog_form_sub', [PortalOperationController::class, 'prog_form_sub'])->name('prog_form_sub');
+// Student Exam Routes
+  Route::get('student/exam', [StudentOperationController::class, 'exam'])->name('exam');
+  Route::get('student/take_exam/{id}', [StudentOperationController::class, 'take_exam'])->name('take_exam');
+  Route::post('student/submit_question', [StudentOperationController::class, 'submit_question'])->name('submit_question');
+  Route::get('student/show_result/{id}', [StudentOperationController::class, 'show_result'])->name('show_result');
+
 });
 Route::get('portal/login', [PortalController::class, 'login'])->name('portal.login');
 Route::post('portal/login_sub', [PortalController::class, 'login_sub'])->name('login_sub');
@@ -221,10 +228,6 @@ Route::get('student/signup', 'StudentController@signup');
 Route::post('student/login_sub', 'StudentController@login');
 Route::get('student/dashboard', 'StudentOperationController@dashboard');
 Route::get('student/logout', 'StudentOperationController@logout');
-Route::get('student/exam', 'StudentOperationController@exam');
-Route::get('student/take_exam/{id}', 'StudentOperationController@take_exam');
-Route::post('student/submit_question', 'StudentOperationController@submit_question');
-Route::get('student/show_result/{id}', 'StudentOperationController@show_result');
 
 
 

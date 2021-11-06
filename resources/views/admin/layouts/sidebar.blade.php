@@ -225,6 +225,17 @@
         </ul>
       </nav>
       @endif
+
+      @if(Auth::user()->role == "Student")
+      <ul class="nav nav-sidebar flex-column">
+        <li class="nav-item">
+          <a href="{{ route('exam') }}" class="nav-link">
+            <i class="fas fa-user nav-icon"></i>
+            <p>Exams</p>
+          </a>
+        </li>
+      </ul>
+      @endif
          
         {{-- <nav class="mt-2">
           @if(Auth::user()->role == 'Teacher')
