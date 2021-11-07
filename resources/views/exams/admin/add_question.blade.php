@@ -158,5 +158,9 @@
     </div>
   </div>
   <!-- /.content-wrapper -->
-  @endsection
+  <script>
+    $(document).ready( function () {
+      $('#dataTables-example1').DataTable();
+  } );
+  </script>  @endsection
 

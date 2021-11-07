@@ -34,6 +34,7 @@
                        </div>
                        <div class="col-sm-4">
                          <div class="text-center" id="time"></div>
+                         <p id="warning-text" class="bg-danger p-2 text-center">Do not refresh the page as you will loose your answers and the clock will continue to count down.</p>
                             {{-- <h3 class="text-center">Timer : <span id="time" class="">60:00</span></h3> --}}
                        </div>
                        <div class="col-sm-4">
@@ -94,6 +95,11 @@
 
   </div>
   <!-- /.content-wrapper -->
+  <script>
+    setTimeout(function() {
+  $("#warning-text").fadeOut().empty();
+}, 10000);
+  </script>
   @endsection
 
 

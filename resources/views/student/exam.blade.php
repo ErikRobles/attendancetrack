@@ -79,7 +79,9 @@
                             </tr>
                         </tfoot>
                     </table>
-
+                    @if(isset($result_info))
+                      <a href="{{ route('show_result', $result_info->id) }}" class="btn btn-info mt-3">Exam result</a>
+                    @endif
                 </div>
                 <!-- /.card-body -->
 

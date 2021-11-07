@@ -146,10 +146,11 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('student/take_exam/{id}', [StudentOperationController::class, 'take_exam'])->name('take_exam');
   Route::post('student/submit_question', [StudentOperationController::class, 'submit_question'])->name('submit_question');
   Route::get('student/show_result/{id}', [StudentOperationController::class, 'show_result'])->name('show_result');
-
+  Route::get('student/show_result_admin/{id}', [StudentOperationController::class, 'show_result_admin'])->name('show_result_admin');
+  Route::get('student/exam_details/{id}', [StudentOperationController::class, 'exam_details'])->name('exam_details');
 });
-Route::get('portal/login', [PortalController::class, 'login'])->name('portal.login');
-Route::post('portal/login_sub', [PortalController::class, 'login_sub'])->name('login_sub');
+// Route::get('portal/login', [PortalController::class, 'login'])->name('portal.login');
+// Route::post('portal/login_sub', [PortalController::class, 'login_sub'])->name('login_sub');
 
 
 // HomePage Lionsfield Routes Front End One
@@ -218,16 +219,7 @@ Route::post('portal/login_sub', [PortalController::class, 'login_sub'])->name('l
     Route::get('payment-cancel-2', [LionsfieldTwoController::class, 'PaymentCancelTwo'])->name('payment-cancel-2');
     Route::get('success-confirmation-two', [LionsfieldTwoController::class, 'SuccessConfirmationTwo'])->name('success-confirmation-two');
 
-   /////////////////////////////
-   // Portal Routes
- 
-
-   
-// Student Section
-Route::get('student/signup', 'StudentController@signup');
-Route::post('student/login_sub', 'StudentController@login');
-Route::get('student/dashboard', 'StudentOperationController@dashboard');
-Route::get('student/logout', 'StudentOperationController@logout');
+  
 
 
 

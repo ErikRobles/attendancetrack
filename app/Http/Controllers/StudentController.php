@@ -26,7 +26,7 @@ class StudentController extends Controller
         $data['student_list'] = User::select('id','name','email', 'role')->get();   
 
         return view('admin.pages.students.students_view', $data);
-    }
+    } 
 
     public function student_status($id)
     {

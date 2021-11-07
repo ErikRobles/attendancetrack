@@ -1,6 +1,8 @@
 @extends('admin.admin_master')
 @section('title', 'Lionsfield | Levels')
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div class="content-wrapper p-3">
 <h1>All Levels</h1>
 <div class="row">
@@ -11,20 +13,12 @@
           <h3 class="card-title">All Levels</h3>
 
           <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-default">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
+           
           </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0">
-          <table class="table table-hover text-nowrap">
+        <div class="card-body table-responsive">
+          <table class="table table-hover text-nowrap" id="levelsTable">
             <thead>
               <tr>
                 <th>ID</th>
@@ -54,4 +48,9 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).ready( function () {
+    $('#levelsTable').DataTable();
+} );
+</script>
 @endsection

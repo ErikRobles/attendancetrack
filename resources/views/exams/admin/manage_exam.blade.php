@@ -83,7 +83,7 @@
 
                 <!-- /.card-footer-->
               </div>
-              <!-- /.card -->
+              <!-- /.card --> 
             </div>
           </div>
         </div>
@@ -141,5 +141,10 @@
     </div>
   </div>
   <!-- /.content-wrapper -->
+  <script>
+    $(document).ready( function () {
+      $('#dataTables-example1').DataTable();
+  } );
+  </script>
   @endsection
 

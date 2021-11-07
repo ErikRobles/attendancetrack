@@ -16,5 +16,11 @@ class Oex_result extends Model
         'result_json'
     ];
 
-    
+    public function userRelation() {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function examMasterRelation() {
+        return $this->belongsTo(Oex_exam_master::class, 'exam_id', 'id');
+    }
 }

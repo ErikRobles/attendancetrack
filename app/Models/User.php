@@ -91,4 +91,5 @@ class User extends Authenticatable
         return $this->belongsTo(Oex_result::class, 'id', 'user_id');
     }
 
+
 }

@@ -35,6 +35,7 @@ class HomeController extends Controller
             return view('admin.index', $data);   
     }
 
+
     public function Logout(Request $request) {
         Auth::logout();
         $request->session()->flush();

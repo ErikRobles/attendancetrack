@@ -14,13 +14,7 @@
 
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-default">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
+              
             </div>
           </div>
         </div> 
@@ -65,8 +59,13 @@
                       </button>
                     </form>
                     <form action="{{ route('admin.pages.students.delete', $student->id) }}" method="get">
-                      <button class="d-inline-block btn btn-danger btn-sm" value="Delete" type="submit" style="display: inline;">
+                      <button class="d-inline-block btn btn-danger btn-sm mr-1" value="Delete" type="submit" style="display: inline;">
                         <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </form>
+                    <form action="{{ route('show_result_admin', $student->resultRelation->id) }}" method="get">
+                      <button class="d-inline-block btn btn-info btn-sm" value="Exam Rsult" type="submit" style="display: inline;">
+                        <i class="fas fa-eye"></i>
                       </button>
                     </form>
                   </div>

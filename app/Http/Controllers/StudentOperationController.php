@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 
 
 use Session;
+use PDF;
 
 use App\Models\User;
 
@@ -26,6 +27,8 @@ class StudentOperationController extends Controller
     public function exam(Request $request) {
         $data['student_info'] = Auth::user()->where('users.role', 'Student')->where('users.id', Auth::user()->id)->with('oexExams')->get()->first();
         $data['exam_join'] = Oex_result::where('exam_id', $data['student_info']->exam)->get()->first();
+        $data['result_info'] = Oex_result::where('user_id', Auth::user()->id)->get()->first();
+
         return view('student.exam', $data);
     }
 
@@ -75,6 +78,25 @@ class StudentOperationController extends Controller
 
         return view('student.show_result', $data);
 
+    }
+
+    public function show_result_admin($id) {
+        $data['result_info'] = Oex_result::where('id', $id)->with('userRelation', 'examMasterRelation')->get()->first();
+
+        $data['student_info'] = User::select(['users.*', 'oex_exam_masters.title', 'oex_exam_masters.exam_date'])->join('oex_exam_masters', 'users.exam', '=', 'oex_exam_masters.id')->where('users.id', 'oex_results.user_id')->get()->first();
+       
+        return view('student.show_result_admin', $data);
+    }
+
+    
+
+    public function exam_details($id) {
+        $data['result_info'] = Oex_result::where('id', $id)->with('userRelation', 'examMasterRelation')->get()->first();
+        $data['student_info'] = User::select(['users.*', 'oex_exam_masters.title', 'oex_exam_masters.exam_date'])->join('oex_exam_masters', 'users.exam', '=', 'oex_exam_masters.id')->where('users.id', 'oex_results.user_id')->get()->first();
+       $pdf = PDF::loadview('student.exam_details', $data);
+       return $pdf->stream('exam_details.pdf');
+          
+       
     }
 
 }
