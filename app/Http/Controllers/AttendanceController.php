@@ -15,28 +15,31 @@ class AttendanceController extends Controller
 {
 
     public function AttendanceReportView() {
-        $data['allData'] = Attendance::with('student.company')->orderBy('attendances.date', 'DESC')->get();
-        $data['teachers'] = Attendance::with('attendance')->get();
+        $data['attendances'] = Attendance::with('getTeacherRelation', 'getCompanyRelation', 'student')->orderBy('date', 'DESC')->get();
+        // dd($data['attendances']); 
         return view('admin.pages.attendance.report_view', $data);
     }
 
+
     public function AttendanceTeacherReportAdd() {
-        // $data['allData'] = Student::with('getTeacherRelation', 'getLevelRelation', 'getCompanyRelation')->get();
-        $data['allData'] = Student::with('user')->get();
-        $data['students'] = Student::where('teacher_id', Auth::user()->id)->get();
+        $data['allData'] = User::where('role', 'Student')->get();
+        $data['students'] = User::where('teacher_id', Auth::user()->id)->with('getCompanyRelation')->distinct()->get();
         $data['levels'] = Level::all();
-        $data['companies'] = Company::with('studentRelation')->get();
+        // $data['companies'] = User::with('getCompanyRelation')->where('teacher_id', Auth::user()->id)->select('name', 'company_id')->distinct()->get();
+
+        
         return view('admin.pages.attendance.attendance_add', $data);
-    }
+    } 
 
     public function AttendanceTeacherReportStore(Request $request) {
-        $countstudent = count($request->student_id);
+        $countstudent = count($request->user_id);
         if($countstudent !=NULL) {
             for($i=0; $i < $countstudent; $i++) { 
                 $attend = new Attendance();
                 $attend->teacher_id = Auth::user()->id;
                 $attend->date = $request->date;
-                $attend->student_id = $request->student_id[$i];
+                $attend->user_id = $request->user_id[$i];
+                $attend->company_id = $request->company_id[$i];
                 $attend->attend_status = $request->attend_status[$i];
                 $attend->save();
             }
@@ -49,7 +52,7 @@ class AttendanceController extends Controller
     }
 
     public function AttendanceTeacherReportEdit($id) {
-        $data['allData'] = Attendance::with('student.company')->orderBy('attendances.date', 'DESC')->find($id);
+        $data['allData'] = Attendance::with('student.getCompanyRelation')->orderBy('attendances.date', 'DESC')->find($id);
         $data['teachers'] = Attendance::with('attendance')->find($id);
         return view('admin.pages.attendance.attendance_edit', $data);
     }
@@ -58,7 +61,7 @@ class AttendanceController extends Controller
                 $attend =  Attendance::find($id);
                 $attend->teacher_id = $request->teacher_id;
                 $attend->date = $request->date;
-                $attend->student_id = $request->student_id;
+                $attend->user_id = $request->user_id;
                 $attend->attend_status = $request->attend_status;
                 $attend->save();
           

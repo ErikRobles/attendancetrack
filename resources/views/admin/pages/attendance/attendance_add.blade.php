@@ -30,15 +30,32 @@
                             <input class="form-control" type="date" value="{{ date('Y-m-d') }}" name="date" required>  
                         </div>
                     </div><!--End col md 12-->
+                 
+
                 </div><!--end row-->
                 <div class="add_item">
  
                 <div class="row">
-                    <div class="col-md-5">
+
+                  {{-- <div class="col-md-5">
+                    <div class="form-group">
+                      <h5>Company Name <span class="text-danger">*</span></h5>
+                      <div class="controls">
+                          <select name="company_id[]" required class="form-control">
+                              <option value="" selected disabled>Select Company Name</option>
+                              @foreach($companies as $company)
+                                  <option value="{{ $company->getCompanyRelation->id }}">{{ $company->getCompanyRelation->name }}</option>
+                              @endforeach
+                          </select>
+                      </div>
+                    </div> --}}
+                 
+
+                    <div class="col-md-3">
                         <div class="form-group">
                           <h5>Student Name <span class="text-danger">*</span></h5>
                           <div class="controls">
-                              <select name="student_id[]" required class="form-control">
+                              <select name="user_id[]" required class="form-control">
                                   <option value="" selected disabled>Select Student Name</option>
                                   @foreach($students as $student)
                                       <option value="{{ $student->id }}">{{ $student->name }}</option>
@@ -48,8 +65,8 @@
                         </div>
                           {{-- End form Group --}}    
                       </div>
-                      {{-- End Col md 5 --}}
-                      <div class="col-md-5">
+                      {{-- End Col md 3 --}}
+                      <div class="col-md-3">
                         <div class="form-group">
                           <h5>Attendance Status <span class="text-danger">*</span></h5>
                           <div class="controls">
@@ -66,9 +83,24 @@
                         </div>
                           {{-- End form Group --}}    
                       </div>
-                      {{-- End Col md 5 --}}
+                          {{-- End Col md 3 --}}
+
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <h5>Company Name <span class="text-danger">*</span></h5>
+                          <div class="controls">
+                              <select name="company_id[]" required class="form-control">
+                                  <option value="" selected disabled>Select Company Name</option>
+                                  @foreach($students->unique('company_id') as $company)
+                                      <option value="{{ $company->company_id }}">{{ $company->getCompanyRelation->name }}</option>
+                                  @endforeach
+                              </select>
+                          </div>
+                        </div>
+                          {{-- End form Group --}}    
+                      </div>
+                      {{-- End Col md 3 --}}
                     
-                      
                       
                       <div class="col-md-2" style="padding-top: 25px;">
                         <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i></span>
@@ -94,11 +126,11 @@
     <div class="whole_extra_item_add" id="whole_extra_item_add">
       <div class="delete_whole_extra_item_add" id="delete_whole_extra_item_add">
         <div class="form-row">
-            <div class="col-md-5">
+            <div class="col-md-3">
                 <div class="form-group">
                   <h5>Student Name <span class="text-danger">*</span></h5>
                   <div class="controls">
-                      <select name="student_id[]" required class="form-control">
+                      <select name="user_id[]" required class="form-control">
                           <option value="" selected disabled>Select Student Name</option>
                           @foreach($students as $student)
                               <option value="{{ $student->id }}">{{ $student->name }}</option>
@@ -108,9 +140,9 @@
                 </div>
                   {{-- End form Group --}}    
               </div>
-              {{-- End Col md 5 --}}
+              {{-- End Col md 3 --}}
         
-              <div class="col-md-5">
+              <div class="col-md-3">
                 <div class="form-group">
                   <h5>Attendance Status <span class="text-danger">*</span></h5>
                   <div class="controls">
@@ -127,8 +159,22 @@
                 </div>
                   {{-- End form Group --}}    
               </div>
-              {{-- End Col md 5 --}}
-              
+              <div class="col-md-3">
+                <div class="form-group">
+                  <h5>Company Name <span class="text-danger">*</span></h5>
+                  <div class="controls">
+                      <select name="company_id[]" required class="form-control">
+                          <option value="" selected disabled>Select Company Name</option>
+                          @foreach($students->unique('company_id') as $company)
+                              <option value="{{ $company->company_id }}">{{ $company->getCompanyRelation->name }}</option>
+                          @endforeach
+                      </select>
+                  </div>
+                </div>
+                  {{-- End form Group --}}    
+              </div>
+              {{-- End Col md 3 --}}
+             
           <div class="col-md-2" style="padding-top: 25px;">
             <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i></span>
             <span class="btn btn-danger removeeventmore"><i class="fa fa-minus-circle"></i></span>

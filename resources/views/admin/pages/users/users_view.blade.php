@@ -37,7 +37,7 @@
                 <td>{{ date('m-d-Y', strtotime($user->created_at)) }}</td>
                 <td>
                     <a href="{{ route('admin.pages.users.edit_user', $user->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('admin.pages.users.delete', $user->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('admin.pages.users.delete', $user->id) }}" class="btn btn-danger" id="delete">Delete</a>
                 </td>
               </tr>
               @endforeach
@@ -54,5 +54,31 @@
   $(document).ready( function () {
     $('#usersTable').DataTable();
 } );
+</script>
+<script>
+  $(function() {
+    $(document).on('click', '#delete', function(e) {
+      e.preventDefault();
+      let link = $(this).attr('href');
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "All other associated records will be deleted also!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = link
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      });
+    });
+  });
 </script>
 @endsection

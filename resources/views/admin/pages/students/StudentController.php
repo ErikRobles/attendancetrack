@@ -72,7 +72,7 @@ class StudentController extends Controller
         $editData->exam = $request->exam;
         $editData->password = Hash::make($request->password);
         $editData->email = $request->email;
-        $editData->role = "Student";
+        $editData->role_as = "Student";
         $editData->save();
         $notification = array(
             'message' => 'Student Successfully Added',
@@ -82,13 +82,10 @@ class StudentController extends Controller
     }
 
     public function StudentEdit($id) {
-        $data['students'] = User::find($id);
-        $data['exams'] = Oex_exam_master::where('status', '1')->get();
-        // dd($data['exams']);
         $data['allData'] = User::where('role', 'Teacher')->get();
         $data['levels'] = Level::all();
         $data['companies'] = Company::all();
-
+        $data['students'] = User::find($id)->where('role', 'Student');
         return view('admin.pages.students.students_edit', $data);
     }
 
@@ -100,7 +97,7 @@ class StudentController extends Controller
         $edit->company_id = $request->company_id;
         $edit->exam = $request->exam;
         $edit->password = Hash::make($request->password);
-        $edit->role = "Student";
+        $edit->role_as = "Student";
         $edit->save();
         $notification = array(
             'message' => 'Student Successfully Updated',
@@ -110,7 +107,7 @@ class StudentController extends Controller
     }
 
     public function StudentDelete($id) { 
-        $student = User::find($id);
+        $student = Student::find($id);
         $student->delete();
         $notification = array(
             'message' => 'Student Successfully Deleted',

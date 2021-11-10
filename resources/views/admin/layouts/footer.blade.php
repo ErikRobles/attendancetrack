@@ -45,6 +45,8 @@
 {{-- <script src="{{ asset('backend/js/demo.js') }}"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('backend/js/pages/dashboard.js') }}"></script>
+<!--sweet alert-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!--toastr-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!--data tables-->  

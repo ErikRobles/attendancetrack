@@ -40,8 +40,8 @@
                         <div class="form-group">
                           <h5>Student Name <span class="text-danger">*</span></h5>
                           <div class="controls">
-                              <select name="student_id" required class="form-control">
-                                      <option value="{{ $allData->student_id }}">{{ $allData->student->name }}</option>
+                              <select name="student_id"  class="form-control">
+                                      <option  value="{{ $allData->student_id }}">{{ $allData->student->name }}</option>
                               </select>
                           </div>
                         </div>

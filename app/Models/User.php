@@ -91,5 +91,13 @@ class User extends Authenticatable
         return $this->belongsTo(Oex_result::class, 'id', 'user_id');
     }
 
+    public function companyRelation() {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
+    public function getAttendanceRelation() {
+        return $this->belongsTo(Attendance::class, 'user_id', 'id');
+    }
+
 
 }

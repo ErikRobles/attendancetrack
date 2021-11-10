@@ -28,6 +28,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable()->onDelete('set null');
+            $table->foreign('attendance_id')->references('id')->on('attendances')->nullable()->onDelete('set null');
+            $table->foreign('performance_id')->references('id')->on('performances')->nullable()->onDelete('set null');
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });

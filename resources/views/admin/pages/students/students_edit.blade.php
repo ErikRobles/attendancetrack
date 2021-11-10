@@ -7,7 +7,7 @@
         <div class="card card-primary">
           <div class="card-header">
             <h3 class="card-title">Edit Student</h3>
-          </div>
+          </div> 
           <!-- /.card-header -->
           <!-- form start -->
           <form action="{{ route('admin.pages.students.update', $students->id) }}" method="post">
@@ -53,6 +53,17 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Assign Exam</label>
+                            <select name="exam" id=""  class="form-select form-control">
+                                <option value="">Select Exam</option>
+                                @foreach($exams as $exam)
+                                    <option value="{{ $exam->id }}">{{ $exam->title }}</option>
+                                @endforeach
+                            </select>
+                          </div>
+                    </div><!--End col md 12-->
                 </div><!--End Row-->
 
             </div>

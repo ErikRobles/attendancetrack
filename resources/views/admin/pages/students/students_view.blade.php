@@ -31,7 +31,6 @@
                 <th>Current Registered Exam</th>
                 <th>Exam Result</th>
                 <th>Status</th>
-                {{-- <th>Created At</th> --}}
                 <th>Action</th>
               </tr>
             </thead>
@@ -43,14 +42,15 @@
                 <td>{{ ($student->level_id !=Null) ? $student['getLevelRelation']['name'] : "No Level Listed" }}</td>
                 <td>{{ ($student->teacher_id !=Null) ? $student['getTeacherRelation']['name'] : "No Teacher Listed" }}</td>
                 <td>{{ $student->email }}</td>
-                <td>{{ ($student->exam !=Null) ? $student['oexExams']['title'] : "Not yet Assigned" }}</td>
+                {{-- <td>{{ ($student->exam !=Null || $student->exam != '0') ? $student['oexExams']['title'] : "Not yet Assigned" }}</td> --}}
+                <td>{{ (isset($student['oexExams']['title'])) ? $student['oexExams']['title'] : "Not yet Assigned" }}</td>
+
                 <td>{{ (isset($student['resultRelation']['result'])) ? $student['resultRelation']['result'] . "%" : "Not yet available" }}</td>
                 @if($student['status']== 1)
                 <td><input data-id="{{ $student['id'] }}" class="student_status" type="checkbox" name="status" checked></td>
                  @else
                  <td><input data-id="{{ $student['id'] }}" class="student_status" type="checkbox" name="status"></td>
                  @endif
-                {{-- <td>{{ date('m-d-Y', strtotime($student->created_at)) }}</td> --}}
                 <td>
                   <div style="display: flex; flex-direction: row;">
                     <form action="{{ route('admin.pages.students.edit', $student->id) }}" method="get">
@@ -63,11 +63,13 @@
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </form>
+                    @if(isset($student->resultRelation->id))
                     <form action="{{ route('show_result_admin', $student->resultRelation->id) }}" method="get">
                       <button class="d-inline-block btn btn-info btn-sm" value="Exam Rsult" type="submit" style="display: inline;">
                         <i class="fas fa-eye"></i>
                       </button>
                     </form>
+                    @endif
                   </div>
                 </td>
               </tr>

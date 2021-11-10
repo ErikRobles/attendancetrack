@@ -7,7 +7,7 @@
 <h1>General Attendance Report</h1>
 <div class="row">
     <div class="col-12">
-        <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="btn btn-success btn-rounded mb-3">Add Attendance</a>
+        {{-- <a href="{{ route('admin.pages.attendance.attendance_add') }}" class="btn btn-success btn-rounded mb-3">Add Attendance</a> --}}
       <div class="card">
         <div class="card-header mb-2">
           <h3 class="card-title">General Attendance Report</h3>
@@ -28,20 +28,19 @@
                 <th>Attend Status</th>
                 <th>Action</th>
               </tr>
-            </thead> 
+            </thead>  
             <tbody>
-                @foreach($allData as $attendance)
+                @foreach($attendances as $attend)
               <tr>
-                <td>{{ date('m-d-Y', strtotime($attendance->date)) }}</td>
+                <td>{{  ($attend->date !=Null) ? date('m-d-Y', strtotime($attend->date)) : "No data Yet."  }}</td>
+                <td>{{  (isset($attend['getCompanyRelation']['name'])) ? $attend['getCompanyRelation']['name'] : "No data yet." }}</td>
+                <td>{{ ($attend->teacher_id !=Null) ? $attend['getTeacherRelation']['name'] : "No Teacher Listed" }}</td>                
+                <td>{{  ($attend->student->name !=Null) ? $attend->student->name : "No Student Listed"  }}</td>
+                <td>{{ ($attend->attend_status !=Null) ? $attend->attend_status : "No Data Available" }}</td>
+
                 <td>
-                    {{ $attendance->student->company->name }}
-                </td>
-                <td>{{ $attendance->attendance->name }}</td>
-                <td>{{ $attendance->student->name }}</td>
-                <td>{{ $attendance->attend_status }}</td>
-                <td>
-                    <a href="{{ route('admin.pages.attendance.attendance_edit', $attendance->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('admin.pages.attendance.attendance_delete', $attendance->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('admin.pages.attendance.attendance_edit', $attend->id) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('admin.pages.attendance.attendance_delete', $attend->id) }}" class="btn btn-danger">Delete</a>
                 </td>
               </tr>
               @endforeach

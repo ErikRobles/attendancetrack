@@ -9,6 +9,14 @@ class Company extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'contact1',
+        'contact2',
+        'phone1',
+        'phone2'
+    ];
+
     // public function getLevelRelation() {
     //     return $this->hasMany(Level::class, 'company_id', 'id');
     // }
@@ -18,7 +26,7 @@ class Company extends Model
     // }
 
      public function studentRelation() {
-         return $this->hasMany(Student::class, 'company_id', 'id');
+         return $this->hasMany(User::class, 'company_id', 'id');
      }
 
        

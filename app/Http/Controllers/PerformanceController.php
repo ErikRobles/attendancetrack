@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Level;
 use App\Models\Company;
 use App\Models\Student;
@@ -17,7 +18,7 @@ class PerformanceController extends Controller
         return view('admin.performance.performance_view', $allData);
     }
     public function PerformanceAdd() {
-        $data['students'] = Student::where('teacher_id', Auth::user()->id)->get();
+        $data['students'] = User::where('teacher_id', Auth::user()->id)->get();
         $data['levels'] = Level::all();
        
         return view('admin.performance.performance_add', $data);

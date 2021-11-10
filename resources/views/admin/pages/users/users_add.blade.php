@@ -54,7 +54,7 @@
                <div class="col-md-3">
                 <div class="form-group">
                     <label for="company">Student's Company</label>
-                    <select name="company_id" id="" class="form-select form-control" required>
+                    <select name="company_id" id="" class="form-select form-control">
                         <option value="">Select Company Name</option>
                         @foreach($companies as $company)
                         <option value="{{ $company->id }}" value="{{ old('company_id') }}">{{ $company->name }}</option>

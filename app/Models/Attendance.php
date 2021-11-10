@@ -15,7 +15,7 @@ class Attendance extends Model
     }
 
     public function student() {
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function attendance() { 
@@ -23,8 +23,17 @@ class Attendance extends Model
     }
 
     public static function getAttendances() {
-        $records = DB::table('attendances')->select('id', 'date', 'attend_status', 'teacher_id', 'student_id')->get()->toArray();
+        $records = DB::table('attendances')->select('id', 'date', 'attend_status', 'teacher_id', 'user_id')->get()->toArray();
 
         return $records;
     }
+
+    public function getTeacherRelation() {
+        return $this->belongsTo(User::class, 'teacher_id', 'id');
+    }
+
+    public function getCompanyRelation() {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
 }

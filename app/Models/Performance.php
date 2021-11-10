@@ -19,7 +19,7 @@ class Performance extends Model
     ];
 
     public function student() {
-        return $this->belongsTo(Student::class, 'student_id', 'id');
+        return $this->belongsTo(User::class, 'student_id', 'id');
     }
 
     public function company() {
