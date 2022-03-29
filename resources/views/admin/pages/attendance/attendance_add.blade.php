@@ -63,7 +63,7 @@
                               </select>
                           </div>
                         </div>
-                          {{-- End form Group --}}    
+                          {{-- End form Group --}}     
                       </div>
                       {{-- End Col md 3 --}}
                       <div class="col-md-3">
@@ -74,7 +74,9 @@
                                   <option value="" selected disabled>Select Attendance Status</option>
                                   <option value="On Time">On Time</option>
                                   <option value="On Leave">On Leave</option>
-                                  <option value="Absent">Absent</option>
+                                  {{-- <option value="Absent">Absent</option> --}}
+                                  <option value="Cancelled On Time">Cancelled On Time</option>
+                                  <option value="Cancelled Off Time">Cancelled Off Time</option>
                                   <option value="15 min Late">15 Minutes Late</option>
                                   <option value="30 min Late">30 Minutes Late</option>
                                   <option value="45 min Late">45 Minutes Late</option>

@@ -2,7 +2,7 @@
 @section('title', 'Lionsfield | Add Performance')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+ 
 <div class="content-wrapper p-3">
     <div class="col-md-12">
         <!-- general form elements -->
@@ -38,10 +38,10 @@
                         <div class="form-group">
                           <h5>Student Name <span class="text-danger">*</span></h5>
                           <div class="controls">
-                              <select name="student_id[]" required class="form-control" id="student_name">
+                              <select name="student_id[]" required class="form-control student-name" id="student_name">
                                   <option value="" selected disabled>Select Student Name</option>
                                   @foreach($students as $student)
-                                      <option value="{{ $student->id }}">{{ $student->name }}</option>
+                                    <option value="{{ $student->id }}" data-level-id="{{$student->level_id}}">{{ $student->name }}</option>
                                   @endforeach
                               </select>
                           </div>
@@ -50,46 +50,50 @@
                       </div>
                       {{-- End Col md 3 --}}
 
-                      <div class="col-md-3">
+                      <div class="col-md-3" style="display: none;">
                         <div class="form-group">
+                          <h5>Student Level <span class="text-danger">*</span></h5>
+                      <div class="controls">
+                      <select name="level_id[]" id="level_id" class="form-control" >
+                       {{-- get level_id for user with matching id --}}
+                        <option value="1">Survivor</option>
+                        <option value="2">Elementary</option>
+                        <option value="3">Pre-intermediate</option>
+                        <option value="4">Intermediate</option>
+                        <option value="5">Upper Intermediate</option>
+                        <option value="6">Advanced</option>
+                       
+                      </select>
+                    </div>
+                  </div>
+                  {{-- End form Group --}} 
+                </div>
+                {{-- End Col md 3 --}}
+                    
+                      <div class="col-md-3" id="last_unit_inputs">
+                        <div class="form-group select">
                           <h5>Last Unit Covered </h5>
                           <div class="controls">
-                              <select name="last_unit_covered[]" class="form-control">
-                                  <option value="" selected disabled>Last Unit Covered</option>
-                                  <option value="1">1</option>
-                                  <option value="2">2</option>
-                                  <option value="3">3</option>
-                                  <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                  <option value="7">7</option>
-                                  <option value="8">8</option>
-                                  <option value="9">9</option>
-                                  <option value="10">10</option>
-                                  <option value="11">11</option>
-                                  <option value="12">12</option>
-                                  <option value="13">13</option>
-                                  <option value="14">14</option>
-                                  <option value="15">15</option>
-                                </select>
+                        <select class="form-control" name="last_unit_covered[]" id="lastUnitCovered">
+                          <option value="" selected disabled>Last Unit Covered</option>
+                          
+                                @include('admin.performance_partials.servUnit')
+                                @include('admin.performance_partials.elemUnit')
+                                @include('admin.performance_partials.preUnit')
+                                @include('admin.performance_partials.intUnit')
+                                @include('admin.performance_partials.uppUnit')                             
+                                @include('admin.performance_partials.advUnit')                               
+                                @include('admin.performance_partials.speUnit')                                                           
+                            
+                        </select>
                           </div>
                         </div>
-                          {{-- End form Group --}}    
                       </div>
+                     @include('admin.performance_partials.lastUnitCoveredPartial')
+                 
                       {{-- End Col md 3 --}}
 
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <h5>Last Page Viewed <span class="text-danger">*</span></h5>
-                          <div class="controls">
-                            <input name="last_page_viewed[]" type="number" class="form-control" placeholder="Enter page number">                            
-                          </div>
-                        </div>
-                          {{-- End form Group --}}    
-                      </div>
-                      {{-- End Col md 3 --}}
-
-                      <div class="col-md-3">
+                      {{-- <div class="col-md-3">
                         <div class="form-group">
                           <h5>Exam Type </h5>
                           <div class="controls">
@@ -104,20 +108,22 @@
                                   <option value="Exit Test">Exit Test</option>
                                 </select>
                           </div>
-                        </div>
+                        </div> --}}
                           {{-- End form Group --}}    
-                      </div>
+                      {{-- </div> --}}
                       {{-- End Col md 3 --}}
+                     
+                      
 
-                      <div class="col-md-4">
+                      {{-- <div class="col-md-4">
                         <div class="form-group">
                           <h5>Exam Score </h5>
                           <div class="controls">
                             <input name="exam_score[]" type="number" class="form-control" placeholder="Enter Exam Score">                            
                           </div>
-                        </div>
+                        </div> --}}
                           {{-- End form Group --}}    
-                      </div>
+                      {{-- </div> --}}
                       {{-- End Col md 4 --}}
 
                       <div class="col-md-6">
@@ -170,6 +176,7 @@
               {{-- End form Group --}}    
           </div>
           {{-- End Col md 3 --}}
+           
 
           <div class="col-md-3">
             <div class="form-group">
@@ -198,7 +205,7 @@
               {{-- End form Group --}}    
           </div>
           {{-- End Col md 3 --}}
-
+         
           <div class="col-md-3">
             <div class="form-group">
               <h5>Last Page Viewed <span class="text-danger">*</span></h5>
@@ -273,4 +280,78 @@
       });
     });
   </script>
+  <script>
+  //  document.querySelector('.student-name').addEventListener('change', function(e) {
+  //     let studentLevel = e.target.data('level-id');
+  //     console.log(studentLevel);
+  //   }); 
+
+    // $(document).ready(function() {
+
+    //   $(document).on('change', '.student-name', function() {
+    //     let studentLevel = $('.student-name option:selected').attr('data-level-id'); to vanilla javascript
+
+
+    //     console.log(studentLevel);
+    //   });
+
+    // });
+  </script>
+
+  <script src="{{ asset('js/performance-scripts/lastUnitCovered.js') }}"></script>
+  <script>
+    (function() {
+      const studentName = document.querySelector('#student_name');
+      const levelEl = document.querySelector('#level_id');
+     
+      // console.log(studentName);
+
+      const levelToUnit = {
+        '1': 'survival',
+        '2': 'elementary',
+        '3': 'pre-intermediate',
+        '4': 'intermediate',
+        '5': 'upper-intermediate',
+        '6': 'advanced',
+        '7': 'specialty',
+      }
+
+      
+
+      const hideAllLevels = () => {
+        document.querySelectorAll('[data-type="survival"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="elementary"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="pre-intermediate"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="intermediate"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="upper-intermediate"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="advanced"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="specialty"]').forEach(el => { el.style.display = 'none'; });
+      }
+
+      
+
+      studentName.addEventListener('change', function(e) {
+        const index = e.target.selectedIndex;
+        const options = e.target.options;
+        const sel = options[index];
+        const level = sel.dataset.levelId;
+        
+        levelEl.value = level;
+        
+        hideAllLevels();  // hide all levels
+        document.querySelectorAll(`[data-type="${levelToUnit[level]}"]`).forEach(el => el.style.display = 'block');
+      });
+
+      const defIndex = studentName.selectedIndex;
+      // const topIndex = topicEl.selectedIndex;
+      levelEl.value = studentName.options[defIndex].dataset.levelId;
+     
+
+      
+      hideAllLevels();
+      
+      
+    })();
+
+    </script>
 @endsection

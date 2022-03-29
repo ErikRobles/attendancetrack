@@ -1,0 +1,15 @@
+<option value='sp1' data-type="specialty">1</option>
+<option value='sp2' data-type="specialty">2</option>
+<option value='sp3' data-type="specialty">3</option>
+<option value='sp4' data-type="specialty">4</option>
+<option value='sp5' data-type="specialty">5</option>
+<option value='sp6' data-type="specialty">6</option>
+<option value='sp7' data-type="specialty">7</option>
+<option value='sp8' data-type="specialty">8</option>
+<option value='sp9' data-type="specialty">9</option>
+<option value='sp10' data-type="specialty">10</option>
+<option value='sp11' data-type="specialty">11</option>
+<option value='sp12' data-type="specialty">12</option>
+<option value='sp13' data-type="specialty">13</option>
+<option value='sp14' data-type="specialty">14</option>
+<option value='sp15' data-type="specialty">15</option>

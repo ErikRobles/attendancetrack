@@ -34,7 +34,8 @@
                                 <option value="">Please Select Role</option>
                                 <option value="Admin" {{ ($allData->role == 'Admin') ? "selected" : "" }}>Admin</option>
                                 <option value="Teacher" {{ ($allData->role == 'Teacher') ? "selected" : "" }}>Teacher</option>
-                            </select>
+                                <option value="Student" {{ ($allData->role == 'Student') ? "selected" : "" }}>Student</option>
+                              </select>
                           </div>
                 </div><!--End Row-->
 

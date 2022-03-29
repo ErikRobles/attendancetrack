@@ -19,7 +19,8 @@ class PerformanceController extends Controller
     }
     public function PerformanceAdd() {
         $data['students'] = User::where('teacher_id', Auth::user()->id)->get();
-        $data['levels'] = Level::all();
+        // get id of level where level_id matches with user_id using model relationship
+        $data['levels'] = Level::with('student')->where('id',  'level_id')->get();
        
         return view('admin.performance.performance_add', $data);
     }

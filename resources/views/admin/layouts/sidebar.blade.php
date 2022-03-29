@@ -66,7 +66,7 @@
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
-                <ul class="nav nav-treeview">
+                {{-- <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="{{ route('front_end_messages') }}" class="nav-link">
                       <i class="fas fa-envelope nav-icon"></i>
@@ -79,7 +79,7 @@
                       <p>Front End Two Messages</p>
                     </a>
                   </li>
-                </ul>
+                </ul> --}}
               </li>
 
               <li class="nav-item">

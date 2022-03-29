@@ -40,8 +40,8 @@
                         <div class="form-group">
                           <h5>Student Name <span class="text-danger">*</span></h5>
                           <div class="controls">
-                              <select name="student_id"  class="form-control">
-                                      <option  value="{{ $allData->student_id }}">{{ $allData->student->name }}</option>
+                              <select name="user_id"  class="form-control">
+                                      <option  value="{{ $allData->user_id }}">{{ $allData->student->name }}</option>
                               </select>
                           </div>
                         </div>
@@ -56,7 +56,9 @@
                                   <option value="" disabled>Select Attendance Status</option>
                                   <option value="On Time" {{ ($allData->attend_status == 'On Time') ? "selected" : ""  }}>On Time</option>
                                   <option value="On Leave" {{ ($allData->attend_status == 'On Leave') ? "selected" : ""  }}>On Leave</option>
-                                  <option value="Absent" {{ ($allData->attend_status == 'Absent') ? "selected" : ""  }}>Absent</option>
+                                  {{-- <option value="Absent" {{ ($allData->attend_status == 'Absent') ? "selected" : ""  }}>Absent</option> --}}
+                                  <option value="Cancelled Off Time" {{ ($allData->attend_status == 'Cancelled Off Time') ? "selected" : ""  }}>Cancelled Off Time</option>
+                                  <option value="Cancelled On Time" {{ ($allData->attend_status == 'Cancelled On Time') ? "selected" : ""  }}>Cancelled On Time</option>
                                   <option value="15 min Late" {{ ($allData->attend_status == '15 min Late') ? "selected" : ""  }}>15 Minutes Late</option>
                                   <option value="30 min Late" {{ ($allData->attend_status == '30 min Late') ? "selected" : ""  }}>30 Minutes Late</option>
                                   <option value="45 min Late" {{ ($allData->attend_status == '45 min Late') ? "selected" : ""  }}>45 Minutes Late</option>

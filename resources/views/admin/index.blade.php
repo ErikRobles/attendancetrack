@@ -74,7 +74,8 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{ $absentCount }}</h3>
+                {{-- <h3>{{ $absentCount}}</h3> --}}
+                <h3>{{ $cancelledOffTimeCount + $cancelledOnTimeCount + $absentCount }}</h3>
 
                 <p>Absences</p>
               </div>

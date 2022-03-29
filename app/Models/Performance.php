@@ -22,6 +22,10 @@ class Performance extends Model
         return $this->belongsTo(User::class, 'student_id', 'id');
     }
 
+    public function level() {
+        return $this->belongsTo(User::class, 'level_id', 'id');
+    }
+
     public function company() {
         return $this->belongsTo(Company::class);
     }

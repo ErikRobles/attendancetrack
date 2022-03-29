@@ -1,0 +1,15 @@
+<option value='in1' data-type="intermediate">1</option>
+<option value='in2' data-type="intermediate">2</option>
+<option value='in3' data-type="intermediate">3</option>
+<option value='in4' data-type="intermediate">4</option>
+<option value='in5' data-type="intermediate">5</option>
+<option value='in6' data-type="intermediate">6</option>
+<option value='in7' data-type="intermediate">7</option>
+<option value='in8' data-type="intermediate">8</option>
+<option value='in9' data-type="intermediate">9</option>
+<option value='in10' data-type="intermediate">10</option>
+<option value='in11' data-type="intermediate">11</option>
+<option value='in12' data-type="intermediate">12</option>
+<option value='in13' data-type="intermediate">13</option>
+<option value='in14' data-type="intermediate">14</option>
+<option value='in15' data-type="intermediate">15</option>

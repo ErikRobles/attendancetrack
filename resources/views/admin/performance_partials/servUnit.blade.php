@@ -1,0 +1,15 @@
+<option value='sv1' data-type="survival">1</option>
+<option value='sv2' data-type="survival">2</option>
+<option value='sv3' data-type="survival">3</option>
+<option value='sv4' data-type="survival">4</option>
+<option value='sv5' data-type="survival">5</option>
+<option value='sv6' data-type="survival">6</option>
+<option value='sv7' data-type="survival">7</option>
+<option value='sv8' data-type="survival">8</option>
+<option value='sv9' data-type="survival">9</option>
+<option value='sv10' data-type="survival">10</option>
+<option value='sv11' data-type="survival">11</option>
+<option value='sv12' data-type="survival">12</option>
+<option value='sv13' data-type="survival">13</option>
+<option value='sv14' data-type="survival">14</option>
+<option value='sv15' data-type="survival">15</option>

@@ -7,7 +7,7 @@
 <h1>Performance Report</h1>
 <div class="row">
     <div class="col-12">
-        <a href="{{ route('performance_add') }}" class="btn btn-success btn-rounded mb-3">Add Performance Record</a>
+        {{-- <a href="{{ route('performance_add') }}" class="btn btn-success btn-rounded mb-3">Add Performance Record</a> --}}
       <div class="card">
         <div class="card-header mb-2">
           <h3 class="card-title">Performance Report</h3>
@@ -18,9 +18,9 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-2">
-          <table class="table table-hover text-nowrap text-center" id="attendance_table">
+          <table class="table table-hover text-center" id="attendance_table">
             <thead>
-              <tr>
+              <tr> 
                 <th>Date</th>             
                 <th>Student</th>
                 <th>Level</th>
@@ -46,8 +46,8 @@
                 <td>{{ $performance->exam_score }}</td>
                 <td>{{ $performance->comments }}</td>
                 <td>
-                    <a href="{{ route('performance_edit', $performance->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('performance_delete', $performance->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('performance_edit', $performance->id) }}" class="btn btn-primary mb-1">Edit</a>
+                    <a href="{{ route('performance_delete', $performance->id) }}" class="btn btn-danger mb-1">Delete</a>
                 </td>
               </tr>
               @endforeach

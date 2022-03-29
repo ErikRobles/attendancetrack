@@ -49,7 +49,7 @@ class AttendanceController extends Controller
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
-    }
+    } 
 
     public function AttendanceTeacherReportEdit($id) {
         $data['allData'] = Attendance::with('student.getCompanyRelation')->orderBy('attendances.date', 'DESC')->find($id);

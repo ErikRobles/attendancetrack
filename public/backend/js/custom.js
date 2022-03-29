@@ -112,4 +112,6 @@ function countDownTimer() {
         setTimeout("countDownTimer()", 1000);
     }
 }
-setTimeout("countDownTimer()", 1000);
+if (document.getElementById("time")) {
+    setTimeout("countDownTimer()", 1000);
+}

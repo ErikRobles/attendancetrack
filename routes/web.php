@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ZoomAttendance;
+use App\Http\Controllers\ZoomController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\PortalController;
@@ -30,13 +32,15 @@ use App\Http\Controllers\StudentOperationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+ 
 Route::get('/', function () {
-    return view('frontend.index');
+    return view('welcome');
 });
 
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->name('dashboard');
  
 Route::group(['middleware' => 'auth'], function() { 
@@ -46,6 +50,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('portal/dashboard', [PortalOperationController::class, 'dashboard'])->name('portal.dashboard');
     Route::get('change/password', [ChangePasswordController::class, 'ChangePassword'])->name('change.password');
     Route::post('password/update', [ChangePasswordController::class, 'UpdatePassword'])->name('password.update');
+    //zoom attendance Routes
+    Route::get('zoom-attendance', [ZoomAttendance::class, 'ZoomAttendanceView'])->name('zoom-attendance');
+
     // User routes
     Route::get('admin/pages/users/users_view', [UserController::class, 'ViewUsers'])->name('admin.pages.users.users_view');
     Route::get('admin/pages/users/users_add', [UserController::class, 'AddUsers'])->name('admin.pages.users.user_add');
@@ -131,16 +138,7 @@ Route::group(['middleware' => 'auth'], function() {
     // Exam Results
    Route::get('admin/student_exam_result/{id}', [AdminController::class, 'student_exam_result'])->name('student_exam_result');
   
-// Portal routes
-  Route::get('portal/exam_form/{id}', [PortalOperationController::class, 'exam_form'])->name('exam_form');
-  Route::post('portal/exam_form_sub', [PortalOperationController::class, 'exam_form_sub'])->name('exam_form_sub');
-  Route::get('portal/print/{id}', [PortalOperationController::class, 'print'])->name('print');
-  Route::get('portal/update_form', [PortalOperationController::class, 'update_form'])->name('update_form');
-  Route::get('portal/student_exam_info', [PortalOperationController::class, 'student_exam_info'])->name('student_exam_info');
-  Route::post('portal/student_exam_info_edit', [PortalOperationController::class, 'student_exam_info_edit'])->name('student_exam_info_edit');
-  Route::get('portal/logout', [PortalOperationController::class, 'logout'])->name('logout');
-  Route::get('portal/student_progress_form', ['uses' => 'PortalOperationController@create']);
-  Route::post('portal/prog_form_sub', [PortalOperationController::class, 'prog_form_sub'])->name('prog_form_sub');
+
 // Student Exam Routes
   Route::get('student/exam', [StudentOperationController::class, 'exam'])->name('exam');
   Route::get('student/take_exam/{id}', [StudentOperationController::class, 'take_exam'])->name('take_exam');
@@ -149,75 +147,9 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('student/show_result_admin/{id}', [StudentOperationController::class, 'show_result_admin'])->name('show_result_admin');
   Route::get('student/exam_details/{id}', [StudentOperationController::class, 'exam_details'])->name('exam_details');
 });
-// Route::get('portal/login', [PortalController::class, 'login'])->name('portal.login');
-// Route::post('portal/login_sub', [PortalController::class, 'login_sub'])->name('login_sub');
 
 
-// HomePage Lionsfield Routes Front End One
-    Route::get('home', [LionsfieldController::class, 'Home'])->name('home');
-    Route::get('frontend/pages/quienes_somos', [LionsfieldController::class, 'Quienes'])->name('quienes_somos');
-    Route::get('frontend/pages/nuestros_clientes', [LionsfieldController::class, 'Clientes'])->name('nuestros_clientes');
-    Route::get('frontend/pages/metodologia', [LionsfieldController::class, 'Metodologia'])->name('metodologia');
-    Route::get('frontend/pages/certificaciones', [LionsfieldController::class, 'Certificaciones'])->name('certificaciones');
-    Route::get('frontend/pages/contacto', [LionsfieldController::class, 'Contacto'])->name('contacto');
 
-    // Internal links
-    Route::get('frontend/pages/internals/renault', [LionsfieldController::class, 'Renault'])->name('renault');
-    Route::get('frontend/pages/internals/hsbc', [LionsfieldController::class, 'Hsbc'])->name('hsbc');
-    Route::get('frontend/pages/internals/ge', [LionsfieldController::class, 'Ge'])->name('ge');
-    Route::get('frontend/pages/internals/holiday_inn', [LionsfieldController::class, 'HolidayInn'])->name('holiday_inn');
-    Route::get('frontend/pages/internals/toyota', [LionsfieldController::class, 'Toyota'])->name('toyota');
-    Route::get('frontend/pages/internals/hiab', [LionsfieldController::class, 'Hiab'])->name('hiab');
-    Route::get('frontend/pages/internals/win_win', [LionsfieldController::class, 'WinWin'])->name('win_win');
-    Route::get('frontend/pages/internals/erik', [LionsfieldController::class, 'Erik'])->name('erik');
-    Route::get('frontend/pages/internals/admin', [LionsfieldController::class, 'AdminProfile'])->name('admin');
-    Route::get('frontend/pages/internals/terrible', [LionsfieldController::class, 'Terrible'])->name('terrible');
-    Route::get('frontend/pages/internals/mergers', [LionsfieldController::class, 'Mergers'])->name('mergers');
-    Route::get('frontend/pages/internals/how_the_brain_works', [LionsfieldController::class, 'HowBrain'])->name('how_the_brain_works');
-    Route::get('frontend/pages/internals/aviso_de_privacidad', [LionsfieldController::class, 'AvisoPrivacidad'])->name('aviso_de_privacidad');
-    // Landing Pages
-    Route::get('home1', [LionsfieldController::class, 'Home1'])->name('home1');
-    Route::get('home2', [LionsfieldController::class, 'Home2'])->name('home2');
-    Route::get('home3', [LionsfieldController::class, 'Home3'])->name('home3');
-    Route::get('home4', [LionsfieldController::class, 'Home4'])->name('home4');
-    Route::get('home5', [LionsfieldController::class, 'Home5'])->name('home5');
-    Route::get('home6', [LionsfieldController::class, 'Home6'])->name('home6');
-    Route::get('home7', [LionsfieldController::class, 'Home7'])->name('home7');
-    Route::get('home8', [LionsfieldController::class, 'Home8'])->name('home8');
-    Route::get('home9', [LionsfieldController::class, 'Home9'])->name('home9');
-
-    // Contact routes
-    Route::get('frontend/contact/contacts', [ContactController::class, 'ContactMessages'])->name('contacts');
-
-///////////////////////////////////////////////////////////////////////////////////////
-// HomePage Lionsfield Routes Front End Two
-    Route::get('inicio', [LionsfieldTwoController::class, 'Inicio'])->name('inicio');
-    Route::get('frontend_inicio/pages/about_us', [LionsfieldTwoController::class, 'AboutUs'])->name('about_us');
-    // # Route
-    Route::get('price-plan', [LionsfieldTwoController::class, 'PricePlan'])->name('price-plan');
-
-    Route::get('contact_us', [LionsfieldTwoController::class, 'ContactUs'])->name('contact_us');
-    Route::get('metodo', [LionsfieldTwoController::class, 'Metodo'])->name('metodo');
-    Route::get('avido_de_privacidad_2', [LionsfieldTwoController::class, 'AvisoDePrivacidad2'])->name('aviso_de_privacidad_2');
-    Route::get('admin_2', [LionsfieldTwoController::class, 'Admin2'])->name('admin_2');
-    Route::get('erik_2', [LionsfieldTwoController::class, 'Erik2'])->name('erik_2');
-    Route::get('ge_2', [LionsfieldTwoController::class, 'Ge2'])->name('ge_2');
-    Route::get('hiab_2', [LionsfieldTwoController::class, 'Hiab2'])->name('hiab_2');
-    Route::get('holiday_inn_2', [LionsfieldTwoController::class, 'HolidayInn2'])->name('holiday_inn_2');
-    Route::get('how_the_brain_works_2', [LionsfieldTwoController::class, 'HowBrain2'])->name('how_the_brain_works_2');
-    Route::get('hsbc_2', [LionsfieldTwoController::class, 'Hsbc2'])->name('hsbc_2');
-    Route::get('mergers_2', [LionsfieldTwoController::class, 'Mergers2'])->name('mergers_2');
-    Route::get('renault_2', [LionsfieldTwoController::class, 'Renault2'])->name('renault_2');
-    Route::get('terrible_2', [LionsfieldTwoController::class, 'Terrible2'])->name('terrible_2');
-    Route::get('toyota_2', [LionsfieldTwoController::class, 'Toyota2'])->name('toyota_2');
-    Route::get('win_win_2', [LionsfieldTwoController::class, 'WinWin2'])->name('win_win_2');
-    // Sales Pages
-    Route::get('clases-grupales', [LionsfieldTwoController::class, 'ClasesGrupales'])->name('clases-grupales');
-    Route::get('clases-individuales', [LionsfieldTwoController::class, 'ClasesIndividuales'])->name('clases-individuales');
-    Route::get('clase-premier', [LionsfieldTwoController::class, 'ClasePremier'])->name('clase-premier');
-    // Paypal Pages
-    Route::get('payment-cancel-2', [LionsfieldTwoController::class, 'PaymentCancelTwo'])->name('payment-cancel-2');
-    Route::get('success-confirmation-two', [LionsfieldTwoController::class, 'SuccessConfirmationTwo'])->name('success-confirmation-two');
 
   
 

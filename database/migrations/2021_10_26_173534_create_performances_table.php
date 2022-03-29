@@ -10,7 +10,7 @@ class CreatePerformancesTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */ 
     public function up()
     {
         Schema::create('performances', function (Blueprint $table) {
@@ -26,7 +26,7 @@ class CreatePerformancesTable extends Migration
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *
