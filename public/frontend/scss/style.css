@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html,
 body,
 div,
@@ -1691,7 +1690,7 @@ span.tech {
 blockquote {
   border: none;
   margin-bottom: -30px;
-  quotes: "" "";
+  quotes: "\f10d", "\f10e";
 }
 
 blockquote h4 {

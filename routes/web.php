@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('password/update', [ChangePasswordController::class, 'UpdatePassword'])->name('password.update');
     //zoom attendance Routes
     Route::get('zoom-attendance', [ZoomAttendance::class, 'ZoomAttendanceView'])->name('zoom-attendance');
+    Route::get('file-import', [ZoomController::class, 'fileImportExport'])->name('file-import');
 
     // User routes
     Route::get('admin/pages/users/users_view', [UserController::class, 'ViewUsers'])->name('admin.pages.users.users_view');

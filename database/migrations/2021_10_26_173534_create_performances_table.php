@@ -19,6 +19,8 @@ class CreatePerformancesTable extends Migration
             $table->integer('teacher_id')->nullable()->onDelete('set null');
             $table->string('last_unit_covered')->nullable();
             $table->integer('last_page_viewed')->nullable();
+            $table->string('last_unit_covered')->nullable();
+            $table->integer('student_progress')->nullable();
             $table->string('exam_type')->nullable();
             $table->integer('exam_score')->nullable();
             $table->text('comments')->nullable();

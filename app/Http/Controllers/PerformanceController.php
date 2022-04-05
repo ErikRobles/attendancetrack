@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\Student;
 use App\Models\Performance;
 use Illuminate\Http\Request;
+use App\Models\Oex_exam_master;
 use Illuminate\Support\Facades\Auth;
 
 class PerformanceController extends Controller
@@ -21,6 +22,8 @@ class PerformanceController extends Controller
         $data['students'] = User::where('teacher_id', Auth::user()->id)->get();
         // get id of level where level_id matches with user_id using model relationship
         $data['levels'] = Level::with('student')->where('id',  'level_id')->get();
+        // get list of all exam titles to show on permormance_add view
+        $data['exam_titles'] = Oex_exam_master::get()->all();
        
         return view('admin.performance.performance_add', $data);
     }
@@ -35,6 +38,7 @@ class PerformanceController extends Controller
                 $perform->last_unit_covered = $request->last_unit_covered[$i];
                 $perform->student_id = $request->student_id[$i];
                 $perform->last_page_viewed = $request->last_page_viewed[$i];
+                $perform->student_progress = $request->student_progress[$i];
                 $perform->exam_type = $request->exam_type[$i];
                 $perform->exam_score = $request->exam_score[$i];
                 $perform->comments = $request->comments[$i];

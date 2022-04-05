@@ -27,6 +27,7 @@
                 <th>Company</th>
                 <th>Last Unit Covered</th>
                 <th>Last Page Viewed</th>
+                <th>Student Progress</th>
                 <th>Exam Type</th>
                 <th>Exam Score</th>
                 <th>Comments</th>
@@ -42,6 +43,7 @@
                 <td>{{$performance->student->getCompanyRelation->name }}</td>
                 <td>{{ $performance->last_unit_covered }}</td>
                 <td>{{ $performance->last_page_viewed }}</td>
+                <td>{{ $performance->student_progress }}</td>
                 <td>{{ $performance->exam_type }}</td>
                 <td>{{ $performance->exam_score }}</td>
                 <td>{{ $performance->comments }}</td>
