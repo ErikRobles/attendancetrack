@@ -1,7 +1,7 @@
 <div id="el1">
   
-        <select name="last_page_viewed[]" class="form-control" >
-          <option disabled value='' selected>Please Select a Page</option>
+        <select name="last_page_viewed"  class="form-control last_page_viewed" >
+         
           <option value='7 Working abroad vocabulary - countries and Nationalities'>7</option>
           <option value='8 Working abroad vocabulary - countries and Nationalities'>8</option>
           <option value='9 Working abroad vocabulary - countries and Nationalities'>9</option>
@@ -9,14 +9,12 @@
           <option value='11 To Be Form'>11</option>
           <option value='12 Jobs and Indefinite Articles - a - an'>12</option>
           <option value='13 Introducing Yourself'>13</option>
-         
         </select>                            
      
 </div>
    <div id="el2">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='16 Work Teams Vocabulary'>16</option>
             <option value='18 Departments and people in a company'>18</option>
             <option value='19 Telling the time'>19</option>
@@ -28,8 +26,7 @@
    </div>
    <div id="el3">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='23 Types of Companies vocabulary'>
               23
             </option>
@@ -50,8 +47,7 @@
    </div>
    <div id="el4">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='33 Types of Offices and office items vocabulary'>
               33
             </option>
@@ -72,8 +68,7 @@
    </div>
    <div id="el5">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='41 Company Events Vocabulary'>
               41
             </option>
@@ -96,8 +91,7 @@
    </div>
    <div id="el6">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='49 Money Currencies'>49</option>
             <option value='50 Money Currencies - Large Numbers - thousands - millions'>50</option>
             <option value='51 Money Currencies  - Large Numbers - thousands - millions'>51</option>
@@ -116,8 +110,7 @@
    </div>
    <div id="el7">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='59 Business Projects'>59</option>
             <option value='60 Business Projects - Past Simple Affirmative'>60</option>
             <option value='61 Verbs in Past Tense'>61</option>
@@ -130,8 +123,7 @@
    </div>
    <div id="el8">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='67 Finding Solutions Vocabulary'>
              67
             </option>
@@ -156,8 +148,7 @@
    </div>
    <div id="el9">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='75 Products Vocabulary'>75</option>
             <option value='76 Products Vocabulary - Adjectives'>76</option>
             <option value='77 Adjectives'>77</option>
@@ -172,8 +163,7 @@
    </div>
    <div id="el10">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='85 Competitors vocalulary'>85</option>
             <option value='86 Competitors vocalulary'>86</option>
             <option value='87 Competitors vocalulary, Word Families'>87</option>
@@ -189,8 +179,7 @@
    </div>
    <div id="el11">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='93 Business Location vocabulary'>
              93
             </option>
@@ -214,8 +203,7 @@
    </div>
    <div id="el12">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='101 Employment Vocabulary, Resumes'>101</option>
             <option value='102 Employment Vocabulary, Resumes'>102</option>
             <option value='103 Employment Vocabulary, Resumes'>103</option>
@@ -228,8 +216,7 @@
   </div>
    <div id="el13">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='111 Creative Thinking Vocabulary'>
               111
             </option>
@@ -251,8 +238,7 @@
    </div>
    <div id="el14">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='119 Business Traveling Vocabulary'>
               119
             </option>
@@ -277,8 +263,7 @@
    </div>
    <div id="el15">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='127 Trends Vocabulary'>127</option>
             <option value='128 Trends Vocabulary, Graphs and Charts'>128</option>
             <option value='131 Trends Vocabulary'>131</option>
@@ -294,8 +279,7 @@
    {{-- Pre-intermediate --}}
    <div id="pr1">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='7 Business Activities and Roles Vocabulary'>
               7
             </option>
@@ -318,8 +302,7 @@
    </div>
    <div id="pr2">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='15 Information Technology IT Vocabulary'>
               15
             </option>
@@ -344,8 +327,7 @@
    </div>
    <div id="pr3">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='23 Work Etiquette Vocabulary'>
              23
             </option>
@@ -366,8 +348,7 @@
    </div>
    <div id="pr4">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='33 Fashion Vocabulary'>33</option>
             <option value='34 Fashion Vocabulary'>34</option>
             <option value='35 Fashion Vocabulary'>35</option>
@@ -380,8 +361,7 @@
    </div>
    <div id="pr5">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='41 Success Vocabulary'>41</option>
             <option value='42 Success Vocabulary'>42</option>
             <option value='43 Success Vocabulary'>43</option>
@@ -397,8 +377,7 @@
    </div>
    <div id="pr6">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='50 Venture Projects Vocabulary'>
               50
             </option>
@@ -420,8 +399,7 @@
    </div>
    <div id="pr7">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='59 Business Location Vocabulary'>
               59
             </option>
@@ -446,8 +424,7 @@
    </div>
    <div id="pr8">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='67 Online job market Vocabulary'>
              67
             </option>
@@ -470,8 +447,7 @@
    </div>
    <div id="pr9">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='75 Marketing Vocabulary'>75</option>
             <option value='76 Marketing Vocabulary'>76</option>
             <option value='77 Marketing Vocabulary'>77</option>
@@ -484,8 +460,7 @@
    </div>
    <div id="pr10">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='85 Prices trends and strategy vocabulary'>
               85
             </option>
@@ -508,8 +483,7 @@
    </div>
    <div id="pr11">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='93 Insurance'>93</option>
             <option value='94 Insurance'>94</option>
             <option value='95 Insurance'>95</option>
@@ -522,8 +496,7 @@
    </div>
    <div id="pr12">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='101 Customer Service Vocabulary'>
               101
             </option>
@@ -546,8 +519,7 @@
    </div>
    <div id="pr13">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='111 Production and Productivity Vocabulary'>
               111
             </option>
@@ -572,8 +544,7 @@
    </div>
    <div id="pr14">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='119 Creativity Vocabulary'>119</option>
             <option value='120 Creativity Vocabulary'>120</option>
             <option value='121 Creativity Vocabulary'>121</option>
@@ -588,8 +559,7 @@
    </div>
    <div id="pr15">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='127 Motivation at Work Vocabulary'>
               127
             </option>
@@ -617,8 +587,7 @@
     {{-- Intermediate --}}
    <div id="in1">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='7 Types and Company Structure Vocabulary'>
               7
             </option>
@@ -643,8 +612,7 @@
    </div>
    <div id="in2">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='15 Management Style Vocabulary'>
               15
             </option>
@@ -671,8 +639,7 @@
    </div>
    <div id="in3">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='23 Strategy Planning SWOT Vocabulary'>
               23
             </option>
@@ -698,8 +665,7 @@
    </div>
    <div id="in4">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='33 Pay Vocabulary'>33</option>
             <option value='34 Pay Vocabulary, Present Perfect vs. Past Simple'>34</option>
             <option value='35 Pay Vocabulary'>35</option>
@@ -712,8 +678,7 @@
    </div>
    <div id="in5">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='41 Development and environment Vocabulary'>
               41
             </option>
@@ -741,8 +706,7 @@
   </div>
   <div id="in6">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='49 Marketing Vocabulary'>49</option>
             <option value='50 Marketing Vocabulary'>50</option>
             <option value='51 Marketing Vocabulary'>51</option>
@@ -755,8 +719,7 @@
   </div>
   <div id="in7">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='59 Outsourcing Vocabulary'>59</option>
             <option value='60 Outsourcing Vocabulary'>60</option>
             <option value='61 Outsourcing Vocabulary'>61</option>
@@ -770,8 +733,7 @@
   </div>
   <div id="in8">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='67 Accounting Vocabulary'>67</option>
             <option value='68 Accounting Vocabulary'>68</option>
             <option value='69 Accounting Vocabulary'>69</option>
@@ -786,8 +748,7 @@
   </div>
   <div id="in9">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='75 Recruiting and Hiring Vocabulary'>
               75
             </option>
@@ -812,8 +773,7 @@
   </div>
   <div id="in10">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='85 Crime Vocabulary'>85</option>
             <option value='86 Crime Vocabulary'>86</option>
             <option value='87 Crime Vocabulary'>87</option>
@@ -828,8 +788,7 @@
   </div>
   <div id="in11">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >          
             <option value='93 Types of Markets Vocabulary'>
               93
             </option>
@@ -854,8 +813,7 @@
   </div>
   <div id="in12">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >           
             <option value='101 Charity or Trade Vocabulary'>
               101
             </option>
@@ -881,9 +839,7 @@
        
   </div>
   <div id="in13">
-   
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >          
             <option value='111 Communication vocabulary'>
               111
             </option>
@@ -906,8 +862,7 @@
   </div>
   <div id="in14">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >          
             <option value='119 Logistics vocabulary'>119</option>
             <option value='120 Logistics vocabulary'>120</option>
             <option value='121 Logistics vocabulary'>121</option>
@@ -920,10 +875,8 @@
           </select>                            
        
   </div>
-  <div id="in15">
-   
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+  <div id="in15">  
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='127 Product development vocabulary'>
              127
             </option>
@@ -948,8 +901,7 @@
 
   {{-- Upper Intermediate --}}
   <span id="up1">
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >          
             <option value='9 Company Mergers and Alliances Vocabulary'>
               9
             </option>
@@ -973,8 +925,7 @@
   </span>
   <div id="up2">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >           
             <option value='17 Project Planning and Management Vocabulary'>
               17
             </option>
@@ -997,8 +948,7 @@
   </div>
   <div id="up3">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" > 
             <option value='25 Team Working - Meeting techniques Vocabulary'>
               25
             </option>
@@ -1021,8 +971,7 @@
   </div>
   <div id="up4">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='34 Information Vocabulary'>34</option>
             <option value='35 Information Vocabulary'>35</option>
             <option value='36 Information Vocabulary'>36</option>
@@ -1034,9 +983,7 @@
        
   </div>
   <div id="up5">
-   
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='42 Technology Vocabulary'>42</option>
             <option value='43 Technology Vocabulary'>43</option>
             <option value='44 Technology Vocabulary'>44</option>
@@ -1051,8 +998,7 @@
   </div>
   <div id="up6">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='50 Advertising Vocabulary'>50</option>
             <option value='51 Advertising Vocabulary'>51</option>
             <option value='52 Advertising Vocabulary'>52</option>
@@ -1067,8 +1013,7 @@
   </div>
   <div id="up7">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='60 Business Law Vocabulary'>60</option>
             <option value='61 Business Law Vocabulary'>61</option>
             <option value='62 Business Law Vocabulary'>62</option>
@@ -1082,8 +1027,7 @@
   </div>
   <div id="up8">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='68 Brands Vocabulary'>68</option>
             <option value='69 Brands Vocabulary'>69</option>
             <option value='70 Brands Vocabulary'>70</option>
@@ -1100,8 +1044,7 @@
   </div>
   <div id="up9">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='76 Investment Vocabulary'>76</option>
             <option value='77 Investment Vocabulary'>77</option>
             <option value='78 Investment Vocabulary'>78</option>
@@ -1114,8 +1057,7 @@
   </div>
   <div id="up10">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='86 Energy Vocabulary'>86</option>
             <option value='87 Energy Vocabulary'>87</option>
             <option value='88 Energy Vocabulary'>88</option>
@@ -1128,8 +1070,7 @@
   </div>
   <div id="up11">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='94 Going Public - stock market - Vocabulary'>
               94
             </option>
@@ -1154,8 +1095,7 @@
   </div>
   <div id="up12">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='102 Competition Vocabulary'>102</option>
             <option value='103 Competition Vocabulary'>103</option>
             <option value='104 Competition Vocabulary'>104</option>
@@ -1170,8 +1110,7 @@
   </div>
   <div id="up13">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='112 Business Banking Vocabulary'>
               112
             </option>
@@ -1194,8 +1133,7 @@
   </div>
   <div id="up14">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='120 Training Vocabulary'>120</option>
             <option value='121 Training Vocabulary'>121</option>
             <option value='122 Training Vocabulary'>122</option>
@@ -1210,8 +1148,7 @@
   </div>
   <div id="up15">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='128 Business Consulting Vocabulary'>
              128
             </option>
@@ -1235,8 +1172,7 @@
   {{-- Advanced --}}
   <div id="ad1">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='7 Human Resources Vocabulary'>7</option>
             <option value='8 Human Resources Vocabulary'>8</option>
             <option value='9 Human Resources Vocabulary'>9</option>
@@ -1250,8 +1186,7 @@
   </div>
   <div id="ad2">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='17 New business Organizations vocabulary'>17</option>
             <option value='18 New business Organizations vocabulary'>18</option>
             <option value='19 New business Organizations vocabulary'>19</option>
@@ -1272,8 +1207,7 @@
   </div>
   <div id="ad3">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='27 Business and Change Vocabulary'>27</option>
             <option value='28 Business and Change Vocabulary'>28</option>
             <option value='29 Business and Change Vocabulary'>29</option>
@@ -1288,8 +1222,7 @@
   </div>
   <div id="ad4">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='39 Business Responsibility vocabulary'>39</option>
             <option value='41 Business Responsibility vocabulary'>41</option>
             <option value='42 Business Responsibility vocabulary, Compound Nouns and Synonyms'>42</option>
@@ -1303,8 +1236,7 @@
   </div>
   <div id="ad5">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
            
             <option value='49 Governance Vocabulary'>49</option>
             <option value='50 Governance Vocabulary'>50</option>
@@ -1320,8 +1252,7 @@
   </div>
   <div id="ad6">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='59 Start-ups Business Vocabulary'>59</option>
             <option value='60 Start-ups Business Vocabulary'>60</option>
             <option value='61 Start-ups Business Vocabulary'>61</option>
@@ -1336,8 +1267,7 @@
   </div>
   <div id="ad7">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='71 Business Resources vocabulary'>71</option>
             <option value='72 Business Resources vocabulary'>72</option>
             <option value='73 Business Resources vocabulary'>73</option>
@@ -1352,8 +1282,7 @@
   </div>
   <div id="ad8">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='81 Authority (Power) Vocabulary'>81</option>
             <option value='82 Authority (Power) Vocabulary'>82</option>
             <option value='83 Authority (Power) Vocabulary'>83</option>
@@ -1368,8 +1297,7 @@
   </div>
   <div id="ad9">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='91 e-Marketing vocabulary'>91</option>
             <option value='92 e-Marketing vocabulary'>92</option>
             <option value='93 e-Marketing vocabulary'>93</option>
@@ -1384,8 +1312,7 @@
   </div>
   <div id="ad10">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='103 Business Risk Vocabulary'>103</option>
             <option value='104 Business Risk Vocabulary'>104</option>
             <option value='105 Business Risk Vocabulary'>105</option>
@@ -1400,8 +1327,7 @@
   </div>
   <div id="ad11">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='113 Business Misconduct Vocabulary'>113</option>
             <option value='114 Business Misconduct Vocabulary'>114</option>
             <option value='115 Business Misconduct Vocabulary'>115</option>
@@ -1416,8 +1342,7 @@
   </div>
   <div id="ad12">
    
-          <select name="last_page_viewed[]" class="form-control" >
-            <option disabled value='' selected>Please Select a Page</option>
+          <select name="last_page_viewed"  class="form-control last_page_viewed" >
             <option value='123 Business Development Vocabulary'>123</option>
             <option value='124 Business Development Vocabulary'>124</option>
             <option value='125 Business Development Vocabulary'>125</option>

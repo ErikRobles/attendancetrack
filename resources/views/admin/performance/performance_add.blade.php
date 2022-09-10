@@ -125,7 +125,7 @@
                         <div class="form-group">
                           <h5>Exam Type </h5>
                           <div class="controls">
-                            <select class="form-control" name="exam_type[]" id="lastUnitCovered" required>
+                            <select class="form-control" name="exam_type[]" id="exam_type" required>
                               <option value="" selected disabled>Exam Taken</option>
                               @foreach($exam_titles as $exam)
                               <option value="{{ $exam->title }}">{{ $exam->title }}</option>
@@ -198,11 +198,10 @@
   <script src="{{ asset('js/performance-scripts/lastUnitCovered.js') }}"></script>
   {{-- <script src="{{ asset('js/performance-scripts/lastUnitCoveredNext.js') }}"></script> --}}
   <script>
+  
     (function() {
       const studentName = document.querySelector('#student_name');
       const levelEl = document.querySelector('#level_id');
-      const studentNameNext = document.querySelector('#student_name_next');
-      const levelElNext = document.querySelector('#level_id_next');
      
       // console.log(studentName);
 
@@ -255,48 +254,4 @@
 
     </script>
 
-    <script>
-      (function() {
-      const studentNameNext = document.querySelector('#student_name_next');
-      const levelElNext = document.querySelector('#level_id_next');
-     
-      const levelToUnitNext = {
-        '1': 'survival',
-        '2': 'elementary',
-        '3': 'pre-intermediate',
-        '4': 'intermediate',
-        '5': 'upper-intermediate',
-        '6': 'advanced',
-        '7': 'specialty',
-      }
-
-      const hideAllLevels = () => {
-        document.querySelectorAll('[data-type="survival"]').forEach(el => { el.style.display = 'none'; });
-        document.querySelectorAll('[data-type="elementary"]').forEach(el => { el.style.display = 'none'; });
-        document.querySelectorAll('[data-type="pre-intermediate"]').forEach(el => { el.style.display = 'none'; });
-        document.querySelectorAll('[data-type="intermediate"]').forEach(el => { el.style.display = 'none'; });
-        document.querySelectorAll('[data-type="upper-intermediate"]').forEach(el => { el.style.display = 'none'; });
-        document.querySelectorAll('[data-type="advanced"]').forEach(el => { el.style.display = 'none'; });
-        document.querySelectorAll('[data-type="specialty"]').forEach(el => { el.style.display = 'none'; });
-      }
-      studentName.addEventListener('change', function(e) {
-        const index = e.target.selectedIndex;
-        const options = e.target.options;
-        const sel = options[index];
-        const levelNext = sel.dataset.levelIdNext;
-        
-        levelElNext.value = levelNext;
-        
-        hideAllLevels();  // hide all levels
-        document.querySelectorAll(`[data-type="${levelToUnitNext[levelNext]}"]`).forEach(el => el.style.display = 'block');
-      });
-
-      const defIndexNext = studentNameNext.selectedIndex;
-      levelElNext.value = studentNameNext.options[defIndexNext].dataset.levelIdNext;
-     
-      hideAllLevels();
-      
-      
-    })();
-    </script>
 @endsection

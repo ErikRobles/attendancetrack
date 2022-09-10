@@ -1,6 +1,9 @@
 @extends('admin.admin_master')
 @section('title', 'Lionsfield | Edit Performance')
 @section('admin')
+{{-- @php
+dd($allData['last_unit_covered'])
+@endphp --}}
 <div class="content-wrapper p-3">
     <div class="col-md-12">
         <!-- general form elements -->
@@ -31,7 +34,7 @@
                           <div class="controls">
                               <select name="student_id" required class="form-control" id="student_name">
                                   <option value="" selected disabled>Select Student Name</option>
-                                      <option value="{{ $allData['student']['id'] }}" {{ ($allData['student']['id'] == $allData->student_id) ? "selected" : "" }}>{{ $allData['student']['name'] }}</option>
+                                      <option value="{{ $allData['student']['id'] }}" {{ ($allData['student']['id'] == $allData->student_id) ? "selected" : "" }} data-level-id="{{$allData['student']['level_id']}}">{{ $allData['student']['name'] }}</option>
                               </select>
                           </div>
                         </div>
@@ -41,25 +44,36 @@
 
                       <div class="col-md-3">
                         <div class="form-group">
+                          <h5>Student Level <span class="text-danger">*</span></h5>
+                      <div class="controls">
+                      <select name="level_id" id="level_id" class="form-control" >
+                       {{-- get level_id for user with matching id --}}
+                        <option value="1">Survivor</option>
+                        <option value="2">Elementary</option>
+                        <option value="3">Pre-intermediate</option>
+                        <option value="4">Intermediate</option>
+                        <option value="5">Upper Intermediate</option>
+                        <option value="6">Advanced</option>
+                       
+                      </select>
+                    </div>
+                  </div>
+                  {{-- End form Group --}} 
+                </div>
+                {{-- End Col md 3 --}}
+
+                      <div class="col-md-3">
+                        <div class="form-group">
                           <h5>Last Unit Covered </h5>
                           <div class="controls">
-                              <select name="last_unit_covered" class="form-control">
-                                  <option value="" selected disabled>Last Unit Covered</option>
-                                  <option value="1" {{ ($allData->last_unit_covered == "1") ? "selected" : "" }}>1</option>
-                                  <option value="2" {{ ($allData->last_unit_covered == "2") ? "selected" : "" }}>2</option>
-                                  <option value="3" {{ ($allData->last_unit_covered == "3") ? "selected" : "" }}>3</option>
-                                  <option value="4" {{ ($allData->last_unit_covered == "4") ? "selected" : "" }}>4</option>
-                                  <option value="5" {{ ($allData->last_unit_covered == "5") ? "selected" : "" }}>5</option>
-                                  <option value="6" {{ ($allData->last_unit_covered == "6") ? "selected" : "" }}>6</option>
-                                  <option value="7" {{ ($allData->last_unit_covered == "7") ? "selected" : "" }}>7</option>
-                                  <option value="8" {{ ($allData->last_unit_covered == "8") ? "selected" : "" }}>8</option>
-                                  <option value="9" {{ ($allData->last_unit_covered == "9") ? "selected" : "" }}>9</option>
-                                  <option value="10" {{ ($allData->last_unit_covered == "10") ? "selected" : "" }}>10</option>
-                                  <option value="11" {{ ($allData->last_unit_covered == "11") ? "selected" : "" }}>11</option>
-                                  <option value="12" {{ ($allData->last_unit_covered == "12") ? "selected" : "" }}>12</option>
-                                  <option value="13" {{ ($allData->last_unit_covered == "13") ? "selected" : "" }}>13</option>
-                                  <option value="14" {{ ($allData->last_unit_covered == "14") ? "selected" : "" }}>14</option>
-                                  <option value="15" {{ ($allData->last_unit_covered == "15") ? "selected" : "" }}>15</option>
+                              <select name="last_unit_covered" class="form-control" id="lastUnitCovered">
+                                  @include('admin.performance_partials.servUnitEdit')
+                                  @include('admin.performance_partials.elemUnitEdit')
+                                  @include('admin.performance_partials.preUnitEdit')
+                                  @include('admin.performance_partials.intUnitEdit')
+                                  @include('admin.performance_partials.uppUnitEdit')                             
+                                  @include('admin.performance_partials.advUnitEdit')                               
+                                  @include('admin.performance_partials.speUnitEdit')     
                                 </select>
                           </div>
                         </div>
@@ -69,28 +83,48 @@
 
                       <div class="col-md-3">
                         <div class="form-group">
-                          <h5>Last Page Viewed <span class="text-danger">*</span></h5>
+                      <h5>Last Page Viewed <span class="text-danger">*</span></h5>
+                      <div class="controls">
+                          @include('admin.performance_partials.lastUnitCoveredEditPartial')
+                        </div>
+                      </div>
+                      </div>
+                    {{-- End Col md 3 --}}  
+
+                      <div class="col-md-4" id="progress_inputs">
+                        <div class="form-group select">
+                          <h5>Rate Your Student </h5>
                           <div class="controls">
-                            <input name="last_page_viewed" type="number" value="{{ $allData->last_page_viewed }}" class="form-control" placeholder="Enter page number">                            
+                        <select class="form-control" name="student_progress" id="student_progress" required>
+                          <option value="" selected disabled>Rate Student's Progress</option>                         
+                          <option value="1" {{ ($allData->student_progress == "1") ? "selected" : "" }}>1</option>
+                          <option value="2" {{ ($allData->student_progress == "2") ? "selected" : "" }}>2</option>
+                          <option value="3" {{ ($allData->student_progress == "3") ? "selected" : "" }}>3</option>
+                          <option value="4" {{ ($allData->student_progress == "4") ? "selected" : "" }}>4</option>
+                          <option value="5" {{ ($allData->student_progress == "5") ? "selected" : "" }}>5</option>
+                          <option value="6" {{ ($allData->student_progress == "6") ? "selected" : "" }}>6</option> 
+                          <option value="7" {{ ($allData->student_progress == "7") ? "selected" : "" }}>7</option>
+                          <option value="8" {{ ($allData->student_progress == "8") ? "selected" : "" }}>8</option>
+                          <option value="9" {{ ($allData->student_progress == "9") ? "selected" : "" }}>9</option>
+                          <option value="10" {{ ($allData->student_progress == "10") ? "selected" : "" }}>10</option>                                                
+                        </select>
                           </div>
                         </div>
-                          {{-- End form Group --}}    
                       </div>
-                      {{-- End Col md 3 --}}
+                    
+                      {{-- End Col md 4 --}}
+
+                      
 
                       <div class="col-md-3">
                         <div class="form-group">
                           <h5>Exam Type </h5>
                           <div class="controls">
                               <select name="exam_type" class="form-control">
-                                  <option value="" disabled>Select Exam Type</option>
-                                  <option value="End of Unit Review" {{ ($allData->last_unit_covered == "End of Unit Review") ? "selected" : "" }}>End of Unit Review</option>
-                                  <option value="Progress Test 1-3" {{ ($allData->last_unit_covered == "Progress Test 1-3") ? "selected" : "" }}>Progress Test 1-3</option>
-                                  <option value="Progress Test 4-6" {{ ($allData->last_unit_covered == "Progress Test 4-6") ? "selected" : "" }}>Progress Test 4-6</option>
-                                  <option value="Progress Test 7-9" {{ ($allData->last_unit_covered == "Progress Test 7-9") ? "selected" : "" }}>Progress Test 7-9</option>
-                                  <option value="Progress Test 10-12" {{ ($allData->last_unit_covered == "Progress Test 10-12") ? "selected" : "" }}>Progress Test 10-12</option>
-                                  <option value="Progress Test 13-15" {{ ($allData->last_unit_covered == "Progress Test 13-15") ? "selected" : "" }}>Progress Test 13-15</option>
-                                  <option value="Exit Test" {{ ($allData->last_unit_covered == "Exit Test") ? "selected" : "" }}>Exit Test</option>
+                                  <option value="{{$allData->exam_type}}" selected>{{$allData->exam_type }}</option>
+                                   @foreach($exam_titles as $exam)
+                                  <option value="{{ $exam->title }}">{{ $exam->title }}</option>
+                                @endforeach 
                                 </select>
                           </div>
                         </div>
@@ -136,4 +170,79 @@
     </div>
 </div>
 </div>
+<script src="{{ asset('js/performance-scripts/lastUnitCoveredEdit.js') }}"></script>
+  {{-- <script src="{{ asset('js/performance-scripts/lastUnitCoveredNext.js') }}"></script> --}}
+  <script>
+    
+    (function() {
+      const studentName = document.querySelector('#student_name');
+      const levelEl = document.querySelector('#level_id');
+     
+
+      const levelToUnit = {
+        '1': 'survival',
+        '2': 'elementary',
+        '3': 'pre-intermediate',
+        '4': 'intermediate',
+        '5': 'upper-intermediate',
+        '6': 'advanced',
+        '7': 'specialty',
+      }
+
+      
+
+      const hideAllLevels = () => {
+        document.querySelectorAll('[data-type="survival"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="elementary"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="pre-intermediate"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="intermediate"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="upper-intermediate"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="advanced"]').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('[data-type="specialty"]').forEach(el => { el.style.display = 'none'; });
+      }
+
+      
+
+      studentName.addEventListener('change', function(e) {
+        const index = e.target.selectedIndex;
+        const options = e.target.options;
+        const sel = options[index];
+        const level = sel.dataset.levelId;
+
+        levelEl.value = level;  
+        hideAllLevels();  // hide all levels
+        document.querySelectorAll(`[data-type="${levelToUnit[level]}"]`).forEach(el => el.style.display = 'block');
+      });
+
+      hideAllLevels();
+
+      const defIndex = studentName.selectedIndex;
+      levelEl.value = studentName.options[defIndex].dataset.levelId;
+      console.log(levelEl.value);
+      document.querySelectorAll(`[data-type="${levelToUnit[levelEl.value]}"]`).forEach(el => el.style.display = 'block');
+      const levelUnitEl = document.querySelector('#lastUnitCovered');
+
+     levelUnitEl.value = "{{$allData['last_unit_covered'] }}";
+     let prevUnit = levelUnitEl.value;
+
+     levelUnitEl.addEventListener('change', function(e) {
+       console.log(e.target.value, prevUnit);
+       const puel =  document.querySelector('#' + prevUnit);
+      puel.style.display = 'none';
+      puel.querySelector('select').setAttribute('disabled', 'disabled');
+      const vel = document.querySelector('#' + e.target.value);
+      vel.querySelector('select').removeAttribute('disabled');
+      vel.style.display = 'block';
+      
+      prevUnit = e.target.value;
+      document.querySelector('#' + e.target.value + ' select').value = '';
+     });
+     document.querySelectorAll('.last_page_viewed').forEach(el => {
+      el.setAttribute('disabled', 'disabled');
+     });
+     document.querySelector('#' + prevUnit + ' .last_page_viewed').removeAttribute('disabled');
+     document.querySelector('#' + prevUnit + ' .last_page_viewed').value = "{{$allData->last_page_viewed}}";
+    })();
+</script>
+   
 @endsection

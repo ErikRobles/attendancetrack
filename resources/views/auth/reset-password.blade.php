@@ -1,11 +1,11 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img src="{{ asset('backend/img/greylogo.png') }}"  style="width: 150px;" alt=""> 
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-
+        
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
 

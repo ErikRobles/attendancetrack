@@ -54,8 +54,11 @@ class PerformanceController extends Controller
 
     public function PerformanceEdit($id) {
         $editData['allData'] = Performance::with('student.getLevelRelation')->with('student.getCompanyRelation')->find($id);
+        $editData['exam_titles'] = Oex_exam_master::get()->all();
+        $editData['levels'] = Level::with('student')->where('id',  'level_id')->get();
         return view('admin.performance.performance_edit', $editData);
     }
+    
 
     public function PerformanceUpdate(Request $request, $id) {
         $data = Performance::find($id);
@@ -63,6 +66,7 @@ class PerformanceController extends Controller
         $data->student_id = $request->student_id;
         $data->last_unit_covered = $request->last_unit_covered;
         $data->last_page_viewed = $request->last_page_viewed;
+        $data->student_progress = $request->student_progress;
         $data->exam_type = $request->exam_type;
         $data->exam_score = $request->exam_score;
         $data->comments = $request->comments;
