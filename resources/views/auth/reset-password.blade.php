@@ -1,15 +1,14 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <img src="{{ asset('backend/img/greylogo.png') }}"  style="width: 150px;" alt=""> 
-        </x-slot>
+            <img src="{{ asset('backend/img/greylogo.png') }}"  style="width: 150px;" alt="">        </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-        
+
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
 
-            <input type="hidden" name="token" value="{{ request()->route('token') }}">
+            <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <div class="block">
                 <x-jet-label for="email" value="{{ __('Email') }}" />

@@ -32,5 +32,9 @@ class Student extends Model
         return $this->belongsTo(Oex_exam_master::class, 'exam', 'id');
     }
 
+    public function resultRelation() {
+        return $this->hasMany(Oex_result::class, 'user_id', 'id');
+    }
+
        
 }

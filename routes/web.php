@@ -49,7 +49,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/dashboard', [HomeController::class, 'AdminDashboard'])->name('admin.dashboard');
     Route::get('portal/dashboard', [PortalOperationController::class, 'dashboard'])->name('portal.dashboard');
     Route::get('change/password', [ChangePasswordController::class, 'ChangePassword'])->name('change.password');
-    Route::post('password/update', [ChangePasswordController::class, 'UpdatePassword'])->name('password.update');
+
+    // Route::post('password/update', [ChangePasswordController::class, 'UpdatePassword'])->name('password.update');
     //zoom attendance Routes
     Route::get('zoom-attendance', [ZoomAttendance::class, 'ZoomAttendanceView'])->name('zoom-attendance');
     Route::get('file-import', [ZoomController::class, 'fileImportExport'])->name('file-import');

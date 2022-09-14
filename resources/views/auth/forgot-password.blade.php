@@ -1,8 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <img src="{{ asset('backend/img/greylogo.png') }}"  style="width: 150px;" alt=""> 
-        </x-slot>
+            <img src="{{ asset('backend/img/greylogo.png') }}"  style="width: 150px;" alt="">        </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}

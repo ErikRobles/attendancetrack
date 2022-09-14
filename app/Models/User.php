@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Contracts\Auth\CanResetPassword;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -58,18 +58,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function student() { 
-        return $this->hasMany(Student::class, 'teacher_id', 'id');
+    public function getTeacherRelation() {
+        return $this->belongsTo(User::class, 'teacher_id', 'id');
     }
-
-    public function teacher() {
-        return $this->hasMany(QuestionCategory::class);
-    }
-
-    // public function getCompanyTeacherRelation() {
-    //     return $this->belongsTo(Company::class, 'company_teachers', 'teacher_id', 'company_id');
-    // }
 
     public function getLevelRelation() {
         return $this->belongsTo(Level::class, 'level_id', 'id');
@@ -79,25 +70,20 @@ class User extends Authenticatable
         return $this->belongsTo(Company::class, 'company_id', 'id');
     }
 
+    public function company() {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
     public function oexExams() {
         return $this->belongsTo(Oex_exam_master::class, 'exam', 'id');
     }
 
-    public function getTeacherRelation() {
-        return $this->belongsTo(User::class, 'teacher_id', 'id');
-    }
-
     public function resultRelation() {
-        return $this->belongsTo(Oex_result::class, 'id', 'user_id');
+        return $this->hasMany(Oex_result::class, 'user_id', 'id');
     }
-
-    public function companyRelation() {
-        return $this->belongsTo(Company::class, 'company_id', 'id');
-    }
-
-    public function getAttendanceRelation() {
-        return $this->belongsTo(Attendance::class, 'user_id', 'id');
-    }
-
 
 }

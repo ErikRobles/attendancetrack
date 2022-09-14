@@ -40,7 +40,7 @@
                 <td>{{ $student->name }}</td>
                 <td>{{ ($student->company_id !=Null) ? $student['getCompanyRelation']['name'] : "No Registered Company Listed"}}</td>
                 <td>{{ ($student->level_id !=Null) ? $student['getLevelRelation']['name'] : "No Level Listed" }}</td>
-                <td>{{ ($student->teacher_id !=Null) ? $student['getTeacherRelation']['name'] : "No Teacher Listed" }}</td>
+                <td>{{ isset($student['getTeacherRelation']) && ($student->teacher_id !=Null) ? $student['getTeacherRelation']['name'] : "No Teacher Listed" }}</td>
                 <td>{{ $student->email }}</td>
                 {{-- <td>{{ ($student->exam !=Null || $student->exam != '0') ? $student['oexExams']['title'] : "Not yet Assigned" }}</td> --}}
                 <td>{{ (isset($student['oexExams']['title'])) ? $student['oexExams']['title'] : "Not yet Assigned" }}</td>

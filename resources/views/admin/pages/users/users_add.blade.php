@@ -37,7 +37,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <select name="role" class="custom-select">
+                            <select name="role" class="custom-select" required>
                                 <option value="">Please Select Role</option>
                                 <option value="Admin">Admin</option>
                                 <option value="Teacher">Teacher</option>
